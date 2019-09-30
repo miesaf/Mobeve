@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="etUsername" type="id" />
+    <item name="etPassword" type="id" />
+    <item name="etConfirmPassword" type="id" />
+    <item name="etFullName" type="id" />
+    <item name="btnRegisterLogin" type="id" />
+    <item name="btnRegister" type="id" />
+</resources>

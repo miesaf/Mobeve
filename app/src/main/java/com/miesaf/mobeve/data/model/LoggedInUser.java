@@ -1,4 +1,4 @@
-package com.miesaf.loginandregistration.data.model;
+package com.miesaf.mobeve.data.model;
 
 /**
  * Data class that captures user information for logged in users retrieved from LoginRepository

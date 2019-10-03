@@ -1,4 +1,4 @@
-package com.miesaf.loginandregistration.ui.login;
+package com.miesaf.mobeve.ui.login;
 
 import androidx.annotation.Nullable;
 

@@ -1,4 +1,4 @@
-package com.miesaf.loginandregistration;
+package com.miesaf.mobeve;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -77,7 +77,9 @@ public class LoginActivity extends AppCompatActivity {
      * Launch Dashboard Activity on Successful Login
      */
     private void loadDashboard() {
-        Intent i = new Intent(getApplicationContext(), DashboardActivity.class);
+        // temporary divert to create event activity
+        //Intent i = new Intent(getApplicationContext(), DashboardActivity.class);
+        Intent i = new Intent(getApplicationContext(), CreateEventActivity.class);
         startActivity(i);
         finish();
 

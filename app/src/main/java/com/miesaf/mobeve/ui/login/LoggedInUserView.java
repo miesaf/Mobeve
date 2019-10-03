@@ -1,4 +1,4 @@
-package com.miesaf.loginandregistration.ui.login;
+package com.miesaf.mobeve.ui.login;
 
 /**
  * Class exposing authenticated user details to the UI.

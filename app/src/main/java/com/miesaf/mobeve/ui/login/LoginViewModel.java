@@ -1,4 +1,4 @@
-package com.miesaf.loginandregistration.ui.login;
+package com.miesaf.mobeve.ui.login;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -6,10 +6,10 @@ import androidx.lifecycle.ViewModel;
 
 import android.util.Patterns;
 
-import com.miesaf.loginandregistration.data.LoginRepository;
-import com.miesaf.loginandregistration.data.Result;
-import com.miesaf.loginandregistration.data.model.LoggedInUser;
-import com.miesaf.loginandregistration.R;
+import com.miesaf.mobeve.data.LoginRepository;
+import com.miesaf.mobeve.data.Result;
+import com.miesaf.mobeve.data.model.LoggedInUser;
+import com.miesaf.mobeve.R;
 
 public class LoginViewModel extends ViewModel {
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.miesaf.loginandregistration">
+    package="com.miesaf.mobeve">
 
     <application
         android:allowBackup="true"
@@ -10,18 +10,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BureauSuggestionActivity"></activity>
-        <activity android:name=".CreateEventActivity" />
-        <activity android:name=".DashboardActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".RegisterActivity" />
+        <activity android:name="com.miesaf.mobeve.BureauSuggestionActivity"></activity>
+        <activity android:name="com.miesaf.mobeve.CreateEventActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="https"
+                    android:host="miesaf.ml"
+                    android:path="/dev/member/mapping" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.miesaf.mobeve.DashboardActivity" />
+        <activity android:name="com.miesaf.mobeve.MainActivity" />
+        <activity android:name="com.miesaf.mobeve.RegisterActivity" />
         <!--
 <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
         -->
         <activity
-            android:name=".LoginActivity"
+            android:name="com.miesaf.mobeve.LoginActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -30,6 +42,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <uses-library android:name="org.apache.http.legacy" android:required="false" />
+
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

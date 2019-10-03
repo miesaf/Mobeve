@@ -1,4 +1,4 @@
-package com.miesaf.loginandregistration;
+package com.miesaf.mobeve;
 
 import android.content.Intent;
 import android.os.Bundle;

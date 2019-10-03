@@ -1,6 +1,6 @@
-package com.miesaf.loginandregistration.data;
+package com.miesaf.mobeve.data;
 
-import com.miesaf.loginandregistration.data.model.LoggedInUser;
+import com.miesaf.mobeve.data.model.LoggedInUser;
 
 /**
  * Class that requests authentication and user information from the remote data source and

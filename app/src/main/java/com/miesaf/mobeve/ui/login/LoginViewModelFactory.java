@@ -1,11 +1,11 @@
-package com.miesaf.loginandregistration.ui.login;
+package com.miesaf.mobeve.ui.login;
 
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.annotation.NonNull;
 
-import com.miesaf.loginandregistration.data.LoginDataSource;
-import com.miesaf.loginandregistration.data.LoginRepository;
+import com.miesaf.mobeve.data.LoginDataSource;
+import com.miesaf.mobeve.data.LoginRepository;
 
 /**
  * ViewModel provider factory to instantiate LoginViewModel.

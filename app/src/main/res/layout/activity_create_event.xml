@@ -23,7 +23,7 @@ tools:context="com.miesaf.mobeve.CreateEventActivity">
 
 
     <EditText
-        android:id="@+id/etFullName"
+        android:id="@+id/etCreateEventName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -33,7 +33,7 @@ tools:context="com.miesaf.mobeve.CreateEventActivity">
         android:padding="10dp" />
 
     <EditText
-        android:id="@+id/etUsername"
+        android:id="@+id/etCreateStartDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -44,7 +44,7 @@ tools:context="com.miesaf.mobeve.CreateEventActivity">
 
 
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/etCreateEndDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -53,18 +53,8 @@ tools:context="com.miesaf.mobeve.CreateEventActivity">
         android:inputType="datetime"
         android:padding="10dp" />
 
-    <EditText
-        android:id="@+id/etConfirmPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@android:color/white"
-        android:hint="@string/evn_type"
-        android:inputType="textPassword"
-        android:padding="10dp" />
-
     <Spinner
-        android:id="@+id/spinner1"
+        android:id="@+id/etCreateEventType"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"

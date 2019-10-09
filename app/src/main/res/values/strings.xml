@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Mobeve</string>
 
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="welcome">Welcome to\nMobeve</string>
+
     <!-- Login & Registration Activity -->
     <string name="username">Username</string>
     <string name="password">Password</string>

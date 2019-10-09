@@ -22,6 +22,7 @@ public class DashboardActivity extends AppCompatActivity {
 
         welcomeText.setText("Welcome "+user.getFullName()+", your session will expire on "+user.getSessionExpiryDate());
 
+        Button mainBtn = findViewById(R.id.btnMain);
         Button evnCreateBtn = findViewById(R.id.btnEvnCreate);
         Button logoutBtn = findViewById(R.id.btnLogout);
 
@@ -30,6 +31,16 @@ public class DashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(DashboardActivity.this, CreateEventActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
+        //Launch Main Activity screen when Main Button is clicked
+        mainBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(DashboardActivity.this, MainActivity.class);
                 startActivity(i);
                 finish();
             }

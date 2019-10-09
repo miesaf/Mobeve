@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAppBg"
     android:orientation="vertical"
     android:padding="20dp"
     tools:context="com.miesaf.mobeve.DashboardActivity">
@@ -11,14 +12,51 @@
         android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/colorBtnText"
         android:padding="20dp" />
+
+    <Button
+        android:id="@+id/btnEvnCreate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/colorButton"
+        android:text="@string/create_event"
+        android:textColor="@color/colorBtnText" />
+
+    <Button
+        android:id="@+id/btnManageEvn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/colorButton"
+        android:text="@string/manage_event"
+        android:textColor="@color/colorBtnText" />
+
+    <Button
+        android:id="@+id/btnListFav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/colorButton"
+        android:text="@string/list_favourites"
+        android:textColor="@color/colorBtnText" />
+
+    <Button
+        android:id="@+id/btnAssgTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/colorButton"
+        android:text="@string/assigned_task"
+        android:textColor="@color/colorBtnText" />
 
     <Button
         android:id="@+id/btnLogout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:background="#aaa"
+        android:background="@color/colorBtnCancel"
         android:text="@string/logout"
         android:textColor="@android:color/white" />
 

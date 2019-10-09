@@ -22,7 +22,18 @@ public class DashboardActivity extends AppCompatActivity {
 
         welcomeText.setText("Welcome "+user.getFullName()+", your session will expire on "+user.getSessionExpiryDate());
 
+        Button evnCreateBtn = findViewById(R.id.btnEvnCreate);
         Button logoutBtn = findViewById(R.id.btnLogout);
+
+        //Launch Create Event Activity screen when Create Event Button is clicked
+        evnCreateBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(DashboardActivity.this, CreateEventActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
 
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override

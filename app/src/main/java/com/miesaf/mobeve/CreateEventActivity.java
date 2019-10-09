@@ -7,7 +7,6 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import android.app.ProgressDialog;
-//import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -31,6 +30,7 @@ public class CreateEventActivity<adapter> extends AppCompatActivity {
     private static final String KEY_EVN_END = "EndDate";
     private static final String KEY_EVN_TYPE = "EventType";
     private static final String KEY_EMPTY = "";
+
     private EditText etEventName;
     private EditText etStartDate;
     private EditText etEndDate;
@@ -74,6 +74,7 @@ public class CreateEventActivity<adapter> extends AppCompatActivity {
         etEndDate = findViewById(R.id.etCreateEndDate);
 
         Button EvnCreate = findViewById(R.id.btnEvnCreate);
+        Button BtnCancel = findViewById(R.id.btnCancel);
 
         EvnCreate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +87,16 @@ public class CreateEventActivity<adapter> extends AppCompatActivity {
                 if (validateInputs()) {
                     EvnCreate();
                 }
+            }
+        });
+
+        //Launch Dashboard Activity screen when Cancel Button is clicked
+        BtnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(CreateEventActivity.this, DashboardActivity.class);
+                startActivity(i);
+                finish();
             }
         });
     }
@@ -194,11 +205,9 @@ public class CreateEventActivity<adapter> extends AppCompatActivity {
     }
 
     /**
-     * Launch Dashboard Activity on Successful Login
+     * Launch Login Activity if not logged in
      */
     private void loadLogin() {
-        // temporary divert to create event activity
-        //Intent i = new Intent(getApplicationContext(), DashboardActivity.class);
         Intent i = new Intent(getApplicationContext(), LoginActivity.class);
         startActivity(i);
         finish();

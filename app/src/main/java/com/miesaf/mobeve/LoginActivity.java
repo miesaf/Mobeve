@@ -78,8 +78,8 @@ public class LoginActivity extends AppCompatActivity {
      */
     private void loadDashboard() {
         // temporary divert to create event activity
-        //Intent i = new Intent(getApplicationContext(), DashboardActivity.class);
-        Intent i = new Intent(getApplicationContext(), CreateEventActivity.class);
+        Intent i = new Intent(getApplicationContext(), DashboardActivity.class);
+        //Intent i = new Intent(getApplicationContext(), CreateEventActivity.class);
         startActivity(i);
         finish();
 

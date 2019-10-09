@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--<color name="colorButton">#f05924</color>-->
+    <color name="colorButton">#2196F3</color>
+    <color name="colorBtnText">#ffffff</color>
+    <color name="colorBtnNext">#4CAF50</color>
+    <color name="colorBtnCancel">#CF1616</color>
+
+    <color name="colorAppBg">#304769</color>
+    <color name="colorText">#ffffff</color>
+    <color name="colorInputText">#ffffff</color>
+
     <color name="colorPrimary">#2196F3</color>
     <color name="colorPrimaryDark">#2D41B1</color>
     <color name="colorAccent">#5AC8FF</color>

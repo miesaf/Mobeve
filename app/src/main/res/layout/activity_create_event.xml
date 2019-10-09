@@ -3,7 +3,7 @@
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-android:background="#304769"
+android:background="@color/colorAppBg"
 android:gravity="center_vertical"
 android:orientation="vertical"
 android:padding="50dp"
@@ -67,8 +67,17 @@ tools:context="com.miesaf.mobeve.CreateEventActivity">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:background="#f05924"
+        android:background="@color/colorBtnNext"
         android:text="@string/evn_next"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/colorBtnCancel"
+        android:text="@string/btnCancel"
         android:textColor="@android:color/white" />
 
 </LinearLayout>

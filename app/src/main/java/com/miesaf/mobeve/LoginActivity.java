@@ -22,16 +22,16 @@ import org.json.JSONObject;
 public class LoginActivity extends AppCompatActivity {
     private static final String KEY_STATUS = "status";
     private static final String KEY_MESSAGE = "message";
-    private static final String KEY_FULL_NAME = "full_name";
-    private static final String KEY_USERNAME = "username";
-    private static final String KEY_PASSWORD = "password";
+    private static final String KEY_FULL_NAME = "user_fname";
+    private static final String KEY_USERNAME = "user_uname";
+    private static final String KEY_PASSWORD = "user_pass";
     private static final String KEY_EMPTY = "";
     private EditText etUsername;
     private EditText etPassword;
     private String username;
     private String password;
     private ProgressDialog pDialog;
-    private String login_url = "https://miesaf.ml/dev/member/login.php";
+    private String login_url = "https://miesaf.ml/dev/mobeve/login.php";
     private SessionHandler session;
 
     @Override

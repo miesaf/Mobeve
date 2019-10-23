@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,56 +8,290 @@
     android:padding="20dp"
     tools:context="com.miesaf.mobeve.DashboardActivity">
 
-    <TextView
-        android:id="@+id/welcomeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorBtnText"
-        android:padding="20dp" />
-
-    <Button
-        android:id="@+id/btnEvnCreate"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@color/colorButton"
-        android:text="@string/create_event"
-        android:textColor="@color/colorBtnText" />
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnManageEvn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@color/colorButton"
-        android:text="@string/manage_event"
-        android:textColor="@color/colorBtnText" />
+        <TextView
+            android:id="@+id/welcomeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBtnText"
+            android:padding="20dp" />
 
-    <Button
-        android:id="@+id/btnListFav"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@color/colorButton"
-        android:text="@string/list_favourites"
-        android:textColor="@color/colorBtnText" />
+        <!-- Event  ################################################ -->
+        <TextView
+            android:id="@+id/tableEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBtnText"
+            android:padding="20dp"
+            android:text="Event"/>
 
-    <Button
-        android:id="@+id/btnAssgTask"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@color/colorButton"
-        android:text="@string/assigned_task"
-        android:textColor="@color/colorBtnText" />
+        <Button
+            android:id="@+id/btnEvnCreate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorButton"
+            android:text="@string/create_event"
+            android:textColor="@color/colorBtnText" />
 
-    <Button
-        android:id="@+id/btnLogout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@color/colorBtnCancel"
-        android:text="@string/logout"
-        android:textColor="@android:color/white" />
+        <Button
+            android:id="@+id/btnEvnList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorButton"
+            android:text="List Event"
+            android:textColor="@color/colorBtnText" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btnEvnRetrieve"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorButton"
+            android:text="View Event"
+            android:textColor="@color/colorBtnText" />
+
+        <Button
+            android:id="@+id/btnEvnUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorButton"
+            android:text="Update Event"
+            android:textColor="@color/colorBtnText" />
+
+        <Button
+            android:id="@+id/btnEvnDelete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorButton"
+            android:text="Delete Event"
+            android:textColor="@color/colorBtnText" />
+
+        <!-- Bureau  ################################################ -->
+        <TextView
+            android:id="@+id/tableBureau"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBtnText"
+            android:padding="20dp"
+            android:text="Bureau"/>
+
+        <Button
+            android:id="@+id/btnBurCreate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#A537DD"
+            android:text="Create Bureau"
+            android:textColor="@color/colorBtnText" />
+
+        <Button
+            android:id="@+id/btnBurList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#A537DD"
+            android:text="List Bureau"
+            android:textColor="@color/colorBtnText" />
+
+        <Button
+            android:id="@+id/btnBurRetrieve"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#A537DD"
+            android:text="Retrieve Bureau"
+            android:textColor="@color/colorBtnText" />
+
+        <Button
+            android:id="@+id/btnBurUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#A537DD"
+            android:text="Update Bureau"
+            android:textColor="@color/colorBtnText" />
+
+        <Button
+            android:id="@+id/btnBurDelete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#A537DD"
+            android:text="Delete Bureau"
+            android:textColor="@color/colorBtnText" />
+
+        <!-- Task  ################################################ -->
+        <TextView
+            android:id="@+id/tableTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBtnText"
+            android:padding="20dp"
+            android:text="Task"/>
+
+        <Button
+            android:id="@+id/btnTaskCreate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#009688"
+            android:text="Create Task"
+            android:textColor="@color/colorBtnText" />
+
+        <Button
+            android:id="@+id/btnTaskList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#009688"
+            android:text="List Task"
+            android:textColor="@color/colorBtnText" />
+
+        <Button
+            android:id="@+id/btnTaskRetrieve"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#009688"
+            android:text="Retrieve Task"
+            android:textColor="@color/colorBtnText" />
+
+        <Button
+            android:id="@+id/btnTaskUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#009688"
+            android:text="Update Task"
+            android:textColor="@color/colorBtnText" />
+
+        <Button
+            android:id="@+id/btnTaskDelete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#009688"
+            android:text="Delete Task"
+            android:textColor="@color/colorBtnText" />
+
+        <!-- Committee  ################################################ -->
+        <TextView
+            android:id="@+id/tableCommittee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBtnText"
+            android:padding="20dp"
+            android:text="Committee"/>
+
+        <Button
+            android:id="@+id/btnComCreate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#1F38DB"
+            android:text="Create Committee"
+            android:textColor="@color/colorBtnText" />
+
+        <Button
+            android:id="@+id/btnComList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#1F38DB"
+            android:text="List Committee"
+            android:textColor="@color/colorBtnText" />
+
+        <Button
+            android:id="@+id/btnComRetrieve"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#1F38DB"
+            android:text="Retrieve Committee"
+            android:textColor="@color/colorBtnText" />
+
+        <Button
+            android:id="@+id/btnComUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#1F38DB"
+            android:text="Update Committee"
+            android:textColor="@color/colorBtnText" />
+
+        <Button
+            android:id="@+id/btnComDelete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#1F38DB"
+            android:text="Delete Committee"
+            android:textColor="@color/colorBtnText" />
+
+        <!--
+        <Button
+            android:id="@+id/btnEvnCreate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorButton"
+            android:text="@string/create_event"
+            android:textColor="@color/colorBtnText" />
+
+        <Button
+            android:id="@+id/btnEvnList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#A537DD"
+            android:text="Event List"
+            android:textColor="@color/colorBtnText" />
+
+        <Button
+            android:id="@+id/btnManageEvn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorButton"
+            android:text="@string/manage_event"
+            android:textColor="@color/colorBtnText" />
+
+        <Button
+            android:id="@+id/btnListFav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorButton"
+            android:text="@string/list_favourites"
+            android:textColor="@color/colorBtnText" />
+
+        <Button
+            android:id="@+id/btnAssgTask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorButton"
+            android:text="@string/assigned_task"
+            android:textColor="@color/colorBtnText" />
+        -->
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorBtnCancel"
+            android:text="@string/logout"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+</ScrollView>

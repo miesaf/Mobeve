@@ -22,9 +22,9 @@ import org.json.JSONObject;
 public class RegisterActivity extends AppCompatActivity {
     private static final String KEY_STATUS = "status";
     private static final String KEY_MESSAGE = "message";
-    private static final String KEY_FULL_NAME = "full_name";
-    private static final String KEY_USERNAME = "username";
-    private static final String KEY_PASSWORD = "password";
+    private static final String KEY_FULL_NAME = "user_fname";
+    private static final String KEY_USERNAME = "user_uname";
+    private static final String KEY_PASSWORD = "user_pass";
     private static final String KEY_EMPTY = "";
     private EditText etUsername;
     private EditText etPassword;
@@ -35,7 +35,7 @@ public class RegisterActivity extends AppCompatActivity {
     private String confirmPassword;
     private String fullName;
     private ProgressDialog pDialog;
-    private String register_url = "https://miesaf.ml/dev/member/register.php";
+    private String register_url = "https://miesaf.ml/dev/mobeve/register.php";
     private SessionHandler session;
 
     @Override

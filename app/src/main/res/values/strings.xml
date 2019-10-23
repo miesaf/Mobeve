@@ -40,5 +40,6 @@
     <string name="list_favourites">Favourite List</string>
     <string name="assigned_task">Assigned Tasks</string>
     <string name="btnCancel">Cancel</string>
+    <string name="btnMain">Main Menu</string>
 
 </resources>

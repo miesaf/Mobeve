@@ -1,18 +1,17 @@
 package com.miesaf.mobeve;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-
-import android.app.ProgressDialog;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -41,7 +40,7 @@ public class CreateEventActivity<adapter> extends AppCompatActivity {
     private String EventType;
 
     private ProgressDialog pDialog;
-    private String register_url = "https://miesaf.ml/dev/member/create_event.php";
+    private String register_url = "https://miesaf.ml/dev/mobeve/create_event.php";
     private SessionHandler session;
 
     @Override

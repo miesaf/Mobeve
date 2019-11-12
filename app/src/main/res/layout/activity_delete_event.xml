@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#304769"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="50dp"
+    tools:context="com.miesaf.mobeve.DeleteEventActivity">
+
+    <TextView
+        android:id="@+id/testText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorBtnText"
+        android:text="Event Deletion"
+        android:padding="20dp" />
+
+    <EditText
+        android:id="@+id/etEvnID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@android:color/white"
+        android:hint="Event ID"
+        android:padding="10dp" />
+
+    <Button
+        android:id="@+id/btnDel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="#f05924"
+        android:text="Delete"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/mainBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/colorButton"
+        android:text="@string/btnMain"
+        android:textColor="@color/colorBtnText" />
+
+</LinearLayout>

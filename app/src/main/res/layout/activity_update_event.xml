@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAppBg"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="50dp"
+    tools:context=".UpdateEventActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="Update Event"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+
+    <EditText
+        android:id="@+id/etUpdateEventName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@android:color/white"
+        android:hint="@string/evn_name"
+        android:inputType="text"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/etUpdateStartDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@android:color/white"
+        android:hint="@string/evn_start"
+        android:inputType="datetime"
+        android:padding="10dp" />
+
+
+    <EditText
+        android:id="@+id/etUpdateEndDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@android:color/white"
+        android:hint="@string/evn_end"
+        android:inputType="datetime"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/etUpdateEventType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@android:color/white"
+        android:hint="@string/evn_type"
+        android:inputType="text"
+        android:padding="10dp" />
+
+    <Button
+        android:id="@+id/btnEvnUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/colorBtnNext"
+        android:text="Update"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/colorBtnCancel"
+        android:text="@string/btnCancel"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>

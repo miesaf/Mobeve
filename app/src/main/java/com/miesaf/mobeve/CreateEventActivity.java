@@ -24,10 +24,11 @@ import org.json.JSONObject;
 public class CreateEventActivity<adapter> extends AppCompatActivity {
     private static final String KEY_STATUS = "status";
     private static final String KEY_MESSAGE = "message";
-    private static final String KEY_EVN_NAME = "EventName";
-    private static final String KEY_EVN_START = "StartDate";
-    private static final String KEY_EVN_END = "EndDate";
-    private static final String KEY_EVN_TYPE = "EventType";
+    private static final String KEY_EVN_NAME = "evn_name";
+    private static final String KEY_EVN_LEADER = "evn_leader";
+    private static final String KEY_EVN_START = "evn_start";
+    private static final String KEY_EVN_END = "evn_end";
+    private static final String KEY_EVN_TYPE = "evn_type";
     private static final String KEY_EMPTY = "";
 
     private EditText etEventName;
@@ -47,6 +48,7 @@ public class CreateEventActivity<adapter> extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         session = new SessionHandler(getApplicationContext());
+        final User user = session.getUserDetails();
 
         if(!session.isLoggedIn()){
             loadLogin();
@@ -84,7 +86,7 @@ public class CreateEventActivity<adapter> extends AppCompatActivity {
                 EndDate = etEndDate.getText().toString().trim();
                 EventType = etEventType.getSelectedItem().toString().trim();
                 if (validateInputs()) {
-                    EvnCreate();
+                    EvnCreate(user.getUsername());
                 }
             }
         });
@@ -120,11 +122,13 @@ public class CreateEventActivity<adapter> extends AppCompatActivity {
         finish();
     }
 
-    private void EvnCreate() {
+    private void EvnCreate(String username) {
         displayLoader();
         JSONObject request = new JSONObject();
+        JSONObject response = new JSONObject();
         try {
             //Populate the request parameters
+            request.put(KEY_EVN_LEADER, username);
             request.put(KEY_EVN_NAME, EventName);
             request.put(KEY_EVN_START, StartDate);
             request.put(KEY_EVN_END, EndDate);
@@ -176,6 +180,8 @@ public class CreateEventActivity<adapter> extends AppCompatActivity {
 
         // Access the RequestQueue through your singleton class.
         MySingleton.getInstance(this).addToRequestQueue(jsArrayRequest);
+
+        System.out.println(response);
     }
 
     /**

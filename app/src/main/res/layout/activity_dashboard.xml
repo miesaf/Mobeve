@@ -20,7 +20,6 @@
             android:textColor="@color/colorBtnText"
             android:padding="20dp" />
 
-        <!-- Event  ################################################ -->
         <TextView
             android:id="@+id/tableEvent"
             android:layout_width="wrap_content"
@@ -74,7 +73,8 @@
             android:text="Delete Event"
             android:textColor="@color/colorBtnText" />
 
-        <!-- Bureau  ################################################ -->
+        <!--
+        // Bureau  ################################################
         <TextView
             android:id="@+id/tableBureau"
             android:layout_width="wrap_content"
@@ -128,7 +128,7 @@
             android:text="Delete Bureau"
             android:textColor="@color/colorBtnText" />
 
-        <!-- Task  ################################################ -->
+        // Task  ################################################
         <TextView
             android:id="@+id/tableTask"
             android:layout_width="wrap_content"
@@ -182,7 +182,7 @@
             android:text="Delete Task"
             android:textColor="@color/colorBtnText" />
 
-        <!-- Committee  ################################################ -->
+        // Committee  ################################################
         <TextView
             android:id="@+id/tableCommittee"
             android:layout_width="wrap_content"
@@ -235,6 +235,7 @@
             android:background="#1F38DB"
             android:text="Delete Committee"
             android:textColor="@color/colorBtnText" />
+        -->
 
         <!--
         <Button

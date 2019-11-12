@@ -20,10 +20,13 @@ public class DashboardActivity extends AppCompatActivity {
         User user = session.getUserDetails();
         TextView welcomeText = findViewById(R.id.welcomeText);
 
-        welcomeText.setText("Welcome "+user.getFullName()+", your session will expire on "+user.getSessionExpiryDate());
+        welcomeText.setText("Welcome "+ user.getFullName() + ", your session will expire on " + user.getSessionExpiryDate());
 
         Button evnCreateBtn = findViewById(R.id.btnEvnCreate);
         Button btnEvnList = findViewById(R.id.btnEvnList);
+        Button btnEvnRetrieve = findViewById(R.id.btnEvnRetrieve);
+        Button btnEvnUpdate = findViewById(R.id.btnEvnUpdate);
+        Button btnEvnDelete = findViewById(R.id.btnEvnDelete);
         Button logoutBtn = findViewById(R.id.btnLogout);
 
         //Launch Create Event Activity screen when Create Event Button is clicked
@@ -40,7 +43,34 @@ public class DashboardActivity extends AppCompatActivity {
         btnEvnList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(DashboardActivity.this, ListEvent.class);
+                Intent i = new Intent(DashboardActivity.this, ListEventActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
+        btnEvnRetrieve.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(DashboardActivity.this, RetrieveEventActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
+        btnEvnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(DashboardActivity.this, UpdateEventActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
+        btnEvnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(DashboardActivity.this, DeleteEventActivity.class);
                 startActivity(i);
                 finish();
             }

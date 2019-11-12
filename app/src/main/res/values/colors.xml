@@ -6,6 +6,7 @@
     <color name="colorBtnNext">#4CAF50</color>
     <color name="colorBtnCancel">#CF1616</color>
 
+    <color name="colorCardBg">#1A76C0</color>
     <color name="colorAppBg">#304769</color>
     <color name="colorText">#ffffff</color>
     <color name="colorInputText">#ffffff</color>

@@ -31,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:background="#f05924"
+        android:background="@color/colorBtnCancel"
         android:text="Delete"
         android:textColor="@android:color/white" />
 

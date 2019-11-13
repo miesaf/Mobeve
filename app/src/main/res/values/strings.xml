@@ -42,4 +42,17 @@
     <string name="btnCancel">Cancel</string>
     <string name="btnMain">Main Menu</string>
 
+    <!-- List Event Activity -->
+    <string name="list_event">List Event</string>
+
+    <!-- Detail Event Activity -->
+    <string name="detail_event">Event Details</string>
+    <string name="edet_id">Event ID</string>
+    <string name="edet_name">Event Name</string>
+    <string name="edet_start">Event Start Date</string>
+    <string name="edet_end">Event End Date</string>
+    <string name="edet_type">Event Type</string>
+    <string name="edet_leader">Event Leader</string>
+    <string name="edet_edit">Edit</string>
+    <string name="edet_delete">Delete</string>
 </resources>

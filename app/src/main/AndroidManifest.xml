@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".DetailEventActivity"></activity>
         <activity android:name=".UpdateEventActivity" />
         <activity android:name=".DeleteEventActivity" />
         <activity android:name=".RetrieveEventActivity" />

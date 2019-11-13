@@ -10,11 +10,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewHolder> {
+public class ListEventsAdapter extends RecyclerView.Adapter<ListEventsAdapter.EventViewHolder> {
     private Context mContext;
     private ArrayList<Events> mEventsList;
+    private OnItemClickListener mListener;
 
-    public EventsAdapter(Context context, ArrayList<Events> eventsList) {
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mListener = listener;
+    }
+
+    public ListEventsAdapter(Context context, ArrayList<Events> eventsList) {
         mContext = context;
         mEventsList = eventsList;
     }
@@ -59,6 +68,18 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
             mEvn_date = eventView.findViewById(R.id.evnDate);
             mEvn_type = eventView.findViewById(R.id.evnType);
             mEvn_leader = eventView.findViewById(R.id.evnLeader);
+
+            eventView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mListener != null) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            mListener.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
     }
 }

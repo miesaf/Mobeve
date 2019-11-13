@@ -23,11 +23,11 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class ListEventActivity extends AppCompatActivity {
+public class ListEventActivity extends AppCompatActivity implements ListEventsAdapter.OnItemClickListener {
     private SessionHandler session;
 
     private RecyclerView mRecyclerView;
-    private EventsAdapter mEventsAdapter;
+    private ListEventsAdapter mListEventsAdapter;
     private ArrayList<Events> mEventList;
     private RequestQueue mRequestQueue;
 
@@ -37,6 +37,13 @@ public class ListEventActivity extends AppCompatActivity {
     private static final String KEY_EVENT_LIST = "data";
     private ProgressDialog pDialog;
     private String post_url = "https://miesaf.ml/dev/mobeve/list_event.php";
+
+    public static final String EXTRA_ID = "evn_id";
+    public static final String EXTRA_NAME = "evn_name";
+    public static final String EXTRA_START = "evn_start";
+    public static final String EXTRA_END = "evn_end";
+    public static final String EXTRA_TYPE = "evn_type";
+    public static final String EXTRA_LEADER = "evn_leader";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,8 +106,9 @@ public class ListEventActivity extends AppCompatActivity {
                                 mEventList.add(new Events(evn_id, evn_name, evn_leader, evn_start, evn_end, evn_type));
                             }
 
-                            mEventsAdapter = new EventsAdapter(ListEventActivity.this, mEventList);
-                            mRecyclerView.setAdapter(mEventsAdapter);
+                            mListEventsAdapter = new ListEventsAdapter(ListEventActivity.this, mEventList);
+                            mRecyclerView.setAdapter(mListEventsAdapter);
+                            mListEventsAdapter.setOnItemClickListener(ListEventActivity.this);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -127,5 +135,20 @@ public class ListEventActivity extends AppCompatActivity {
         pDialog.setCancelable(false);
         pDialog.show();
 
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent detailIntent = new Intent(this, DetailEventActivity.class);
+        Events clickedItem = mEventList.get(position);
+
+        detailIntent.putExtra(EXTRA_ID, clickedItem.getEvn_id());
+        detailIntent.putExtra(EXTRA_NAME, clickedItem.getEvn_name());
+        detailIntent.putExtra(EXTRA_START, clickedItem.getEvn_start());
+        detailIntent.putExtra(EXTRA_END, clickedItem.getEvn_end());
+        detailIntent.putExtra(EXTRA_TYPE, clickedItem.getEvn_type());
+        detailIntent.putExtra(EXTRA_LEADER, clickedItem.getEvn_leader());
+
+        startActivity(detailIntent);
     }
 }

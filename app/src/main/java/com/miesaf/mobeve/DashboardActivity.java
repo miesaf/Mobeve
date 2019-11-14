@@ -1,5 +1,6 @@
 package com.miesaf.mobeve;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,7 @@ import com.tapadoo.alerter.Alerter;
 
 public class DashboardActivity extends AppCompatActivity {
     private SessionHandler session;
+    private ProgressDialog pDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,12 +56,22 @@ public class DashboardActivity extends AppCompatActivity {
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                displayLoader("Logging out.. Please wait...");
                 session.logoutUser();
                 Intent i = new Intent(DashboardActivity.this, LoginActivity.class);
                 startActivity(i);
                 finish();
+                pDialog.dismiss();
             }
         });
+    }
+
+    private void displayLoader(String message) {
+        pDialog = new ProgressDialog(DashboardActivity.this);
+        pDialog.setMessage(message);
+        pDialog.setIndeterminate(false);
+        pDialog.setCancelable(false);
+        pDialog.show();
     }
 
     public void showAlerter(View v) {

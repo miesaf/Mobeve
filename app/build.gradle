@@ -40,4 +40,7 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.8.5'
     implementation 'com.fasterxml.jackson.core:jackson-core:2.8.5'
     implementation 'com.fasterxml.jackson.core:jackson-annotations:2.8.5'
+
+    // Alerter Library
+    implementation 'com.tapadoo.android:alerter:2.0.4'
 }

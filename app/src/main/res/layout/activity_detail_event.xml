@@ -158,12 +158,12 @@
             android:textColor="@android:color/white" />
 
         <Button
-            android:id="@+id/mainBtn"
+            android:id="@+id/btnEvnList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:background="@color/colorButton"
-            android:text="@string/btnMain"
+            android:text="Back to Event List"
             android:textColor="@color/colorBtnText" />
 
     </LinearLayout>

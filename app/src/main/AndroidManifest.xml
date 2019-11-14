@@ -14,8 +14,6 @@
         android:theme="@style/AppTheme.NoActionBar">
         <activity android:name=".DetailEventActivity"></activity>
         <activity android:name=".UpdateEventActivity" />
-        <activity android:name=".DeleteEventActivity" />
-        <activity android:name=".RetrieveEventActivity" />
         <activity android:name=".ListEventActivity" />
         <activity
             android:name=".SplashActivity"

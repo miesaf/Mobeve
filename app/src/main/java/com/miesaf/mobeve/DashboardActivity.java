@@ -2,12 +2,15 @@ package com.miesaf.mobeve;
 
 import android.content.Intent;
 import android.os.Bundle;
-//import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.tapadoo.alerter.Alerter;
+
+//import android.support.v7.app.AppCompatActivity;
 
 public class DashboardActivity extends AppCompatActivity {
     private SessionHandler session;
@@ -16,17 +19,16 @@ public class DashboardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+
         session = new SessionHandler(getApplicationContext());
         User user = session.getUserDetails();
+
         TextView welcomeText = findViewById(R.id.welcomeText);
 
         welcomeText.setText("Welcome "+ user.getFullName() + ", your session will expire on " + user.getSessionExpiryDate());
 
         Button evnCreateBtn = findViewById(R.id.btnEvnCreate);
         Button btnEvnList = findViewById(R.id.btnEvnList);
-        Button btnEvnRetrieve = findViewById(R.id.btnEvnRetrieve);
-        Button btnEvnUpdate = findViewById(R.id.btnEvnUpdate);
-        Button btnEvnDelete = findViewById(R.id.btnEvnDelete);
         Button logoutBtn = findViewById(R.id.btnLogout);
 
         //Launch Create Event Activity screen when Create Event Button is clicked
@@ -49,33 +51,6 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
-        btnEvnRetrieve.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(DashboardActivity.this, RetrieveEventActivity.class);
-                startActivity(i);
-                finish();
-            }
-        });
-
-        btnEvnUpdate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(DashboardActivity.this, UpdateEventActivity.class);
-                startActivity(i);
-                finish();
-            }
-        });
-
-        btnEvnDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(DashboardActivity.this, DeleteEventActivity.class);
-                startActivity(i);
-                finish();
-            }
-        });
-
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,8 +58,20 @@ public class DashboardActivity extends AppCompatActivity {
                 Intent i = new Intent(DashboardActivity.this, LoginActivity.class);
                 startActivity(i);
                 finish();
-
             }
         });
+    }
+
+    public void showAlerter(View v) {
+        Alerter.create(this)
+                .setText("You have been logged out! Thank you for using Mobeve.")
+                .setIcon(R.drawable.mobeve_logo_transparent)
+                .enableIconPulse(false)
+                .setBackgroundColorRes(R.color.colorPrimaryDark)
+                .setDuration(2500)
+                .enableSwipeToDismiss()
+                .enableProgress(true)
+                .setProgressColorRes(R.color.colorAccent)
+                .show();
     }
 }

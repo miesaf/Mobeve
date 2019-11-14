@@ -1,10 +1,12 @@
 package com.miesaf.mobeve;
 
+import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,7 +21,9 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class UpdateEventActivity extends AppCompatActivity {
+import java.util.Calendar;
+
+public class UpdateEventActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String KEY_STATUS = "status";
     private static final String KEY_MESSAGE = "message";
     private static final String KEY_EVN_ID = "evn_id";
@@ -35,12 +39,16 @@ public class UpdateEventActivity extends AppCompatActivity {
     private EditText etUpdateEndDate;
     private EditText etUpdateEventType;
 
+    Button btnEvnStart, btnEvnEnd;
+
     private TextView tvEvnId;
 
     private String EventName;
     private String StartDate;
     private String EndDate;
     private String EventType;
+
+    private int mYear, mMonth, mDay;
 
     String EventNameHolder, StartDateHolder, EndDateHolder, EventTypeHolder;
 
@@ -76,8 +84,13 @@ public class UpdateEventActivity extends AppCompatActivity {
         tvEvnId = findViewById(R.id.tvEvnId);
         tvEvnId.setText("Event ID: " + evn_id_edit);
 
+        btnEvnStart = findViewById(R.id.btnEvnStart);
+        btnEvnEnd = findViewById(R.id.btnEvnEnd);
         Button EvnUpdate = findViewById(R.id.btnEvnUpdate);
         Button BtnCancel = findViewById(R.id.btnCancel);
+
+        btnEvnStart.setOnClickListener(this);
+        btnEvnEnd.setOnClickListener(this);
 
         // Receive Student ID, Name , Phone Number , Class Send by previous ShowSingleRecordActivity.
         EventNameHolder = evn_name_edit;
@@ -114,6 +127,39 @@ public class UpdateEventActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    public void onClick(View v) {
+        // Get Current Date
+        final Calendar c = Calendar.getInstance();
+        mYear = c.get(Calendar.YEAR);
+        mMonth = c.get(Calendar.MONTH);
+        mDay = c.get(Calendar.DAY_OF_MONTH);
+
+        if (v == btnEvnStart) {
+            DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                    new DatePickerDialog.OnDateSetListener() {
+                        @Override
+                        public void onDateSet(DatePicker view, int year,
+                                              int monthOfYear, int dayOfMonth) {
+                            etUpdateStartDate.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth + " 00:00:00");
+                        }
+                    }, mYear, mMonth, mDay);
+            datePickerDialog.show();
+        }
+
+        if (v == btnEvnEnd) {
+            DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                    new DatePickerDialog.OnDateSetListener() {
+                        @Override
+                        public void onDateSet(DatePicker view, int year,
+                                              int monthOfYear, int dayOfMonth) {
+                            etUpdateEndDate.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth + " 00:00:00");
+                        }
+                    }, mYear, mMonth, mDay);
+            datePickerDialog.show();
+        }
     }
 
     private void displayLoader() {

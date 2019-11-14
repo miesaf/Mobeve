@@ -86,8 +86,8 @@ public class DetailEventActivity extends AppCompatActivity {
         btnEvnList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent i = new Intent(DetailEventActivity.this, DashboardActivity.class);
-                //startActivity(i);
+                Intent i = new Intent(getApplicationContext(), ListEventActivity.class);
+                startActivity(i);
                 finish();
             }
         });
@@ -231,8 +231,6 @@ public class DetailEventActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_END_EDIT, evn_end);
         intent.putExtra(EXTRA_TYPE_EDIT, evn_type);
         startActivity(intent);
-
-        finish();
     }
 
     /**

@@ -107,12 +107,10 @@ public class UpdateEventActivity extends AppCompatActivity {
             }
         });
 
-        //Launch Dashboard Activity screen when Cancel Button is clicked
+        //Launch previous Event Detail Activity screen when Cancel Button is clicked
         BtnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(UpdateEventActivity.this, ListEventActivity.class);
-                startActivity(i);
                 finish();
             }
         });
@@ -124,12 +122,6 @@ public class UpdateEventActivity extends AppCompatActivity {
         pDialog.setIndeterminate(false);
         pDialog.setCancelable(false);
         pDialog.show();
-    }
-
-    private void loadDashboard() {
-        Intent i = new Intent(getApplicationContext(), DashboardActivity.class);
-        startActivity(i);
-        finish();
     }
 
     private void EvnUpdate(String username, String evn_id_update) {

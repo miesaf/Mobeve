@@ -23,6 +23,8 @@ import org.json.JSONObject;
 
 import java.util.Calendar;
 
+import static com.miesaf.mobeve.DetailEventActivity.EXTRA_ID_EDIT;
+
 public class UpdateEventActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String KEY_STATUS = "status";
     private static final String KEY_MESSAGE = "message";
@@ -70,7 +72,7 @@ public class UpdateEventActivity extends AppCompatActivity implements View.OnCli
 
         Intent intent = getIntent();
 
-        String evn_id_edit = intent.getStringExtra(DetailEventActivity.EXTRA_ID_EDIT);
+        String evn_id_edit = intent.getStringExtra(EXTRA_ID_EDIT);
         String evn_name_edit = intent.getStringExtra(DetailEventActivity.EXTRA_NAME_EDIT);
         String evn_start_edit = intent.getStringExtra(DetailEventActivity.EXTRA_START_EDIT);
         String evn_end_edit = intent.getStringExtra(DetailEventActivity.EXTRA_END_EDIT);
@@ -115,7 +117,7 @@ public class UpdateEventActivity extends AppCompatActivity implements View.OnCli
 
                 if (validateInputs()) {
                     Intent intent = getIntent();
-                    EvnUpdate(user.getUsername(), intent.getStringExtra(DetailEventActivity.EXTRA_ID_EDIT));
+                    EvnUpdate(user.getUsername(), intent.getStringExtra(EXTRA_ID_EDIT));
                 }
             }
         });
@@ -198,6 +200,7 @@ public class UpdateEventActivity extends AppCompatActivity implements View.OnCli
                                 Toast.makeText(getApplicationContext(), "Event update successful!",
                                         Toast.LENGTH_LONG).show();
 
+                                loadList();
                                 finish();
 
                             }else{
@@ -253,6 +256,11 @@ public class UpdateEventActivity extends AppCompatActivity implements View.OnCli
         Intent i = new Intent(getApplicationContext(), LoginActivity.class);
         startActivity(i);
         finish();
+    }
 
+    private void loadList() {
+        Intent i = new Intent(getApplicationContext(), ListEventActivity.class);
+        startActivity(i);
+        finish();
     }
 }

@@ -56,6 +56,7 @@ public class DetailEventActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
         String evn_id = intent.getStringExtra(ListEventActivity.EXTRA_ID);
+        /*
         String evn_name = intent.getStringExtra(ListEventActivity.EXTRA_NAME);
         String evn_start = intent.getStringExtra(ListEventActivity.EXTRA_START);
         String evn_end = intent.getStringExtra(ListEventActivity.EXTRA_END);
@@ -77,6 +78,8 @@ public class DetailEventActivity extends AppCompatActivity {
         tvEvn_leader.setText(evn_leader);
 
         mEventList.add(new Events(evn_id, evn_name, evn_leader, evn_start, evn_end, evn_type));
+        */
+        retrieveEvn(evn_id);
 
         Button btnEvnList = findViewById(R.id.btnEvnList);
         Button btnEvnUpdate = findViewById(R.id.btnEvnEdit);
@@ -121,6 +124,7 @@ public class DetailEventActivity extends AppCompatActivity {
 
     private void retrieveEvn(String evn_id) {
         displayLoader("Retrieving event details.. Please wait...");
+
         JSONObject request = new JSONObject();
         JSONObject response = new JSONObject();
         try {
@@ -136,17 +140,28 @@ public class DetailEventActivity extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
                         pDialog.dismiss();
                         try {
-                            //Check if user got registered successfully
+                            //Check if response returned successfully
                             if (response.getInt(KEY_STATUS) == 0) {
-                                //Set the user session
-                                Toast.makeText(getApplicationContext(), "Event update successful!",
-                                        Toast.LENGTH_LONG).show();
+                                JSONObject data = response.getJSONArray("data").getJSONObject(0);
 
-                                finish();
+                                TextView tvEvn_id = findViewById(R.id.evnId);
+                                TextView tvEvn_name = findViewById(R.id.evnName);
+                                TextView tvEvn_start = findViewById(R.id.evnStart);
+                                TextView tvEvn_end = findViewById(R.id.evnEnd);
+                                TextView tvEvn_type = findViewById(R.id.evnType);
+                                TextView tvEvn_leader = findViewById(R.id.evnLeader);
+
+                                tvEvn_id.setText(data.getString("evn_id"));
+                                tvEvn_name.setText(data.getString("evn_name"));
+                                tvEvn_start.setText(data.getString("evn_start"));
+                                tvEvn_end.setText(data.getString("evn_end"));
+                                tvEvn_type.setText(data.getString("evn_type"));
+                                tvEvn_leader.setText(data.getString("evn_leader"));
+
+                                //Toast.makeText(getApplicationContext(), "Display event details successful!", Toast.LENGTH_SHORT).show();
 
                             }else{
-                                Toast.makeText(getApplicationContext(),
-                                        response.getString(KEY_MESSAGE), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), response.getString(KEY_MESSAGE), Toast.LENGTH_LONG).show();
 
                             }
                         } catch (JSONException e) {
@@ -230,7 +245,8 @@ public class DetailEventActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_START_EDIT, evn_start);
         intent.putExtra(EXTRA_END_EDIT, evn_end);
         intent.putExtra(EXTRA_TYPE_EDIT, evn_type);
-        startActivity(intent);
+        //startActivity(intent);
+        startActivityForResult(intent, 1);
     }
 
     /**
@@ -252,8 +268,24 @@ public class DetailEventActivity extends AppCompatActivity {
     }
 
     private void loadEventList() {
-        Intent i = new Intent(getApplicationContext(), ListEventActivity.class);
+        Intent i = new Intent(this, ListEventActivity.class);
         startActivity(i);
         finish();
     }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+
+            if (resultCode == RESULT_OK) {
+                //Update List
+                finish();
+            }
+            if (resultCode == RESULT_CANCELED) {
+                //Do nothing?
+                this.recreate();
+            }
+        }
+    }//onActivityResult
 }

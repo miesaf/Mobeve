@@ -159,7 +159,7 @@ public class ListEventActivity extends AppCompatActivity implements ListEventsAd
         detailIntent.putExtra(EXTRA_LEADER, clickedItem.getEvn_leader());
 
         startActivity(detailIntent);
-
+        finish();
         pDialog.dismiss();
     }
 

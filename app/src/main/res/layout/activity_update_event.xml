@@ -21,6 +21,15 @@
         android:textSize="26sp"
         android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/tvEvnId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="Event ID: "
+        android:textColor="@android:color/white"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/etUpdateEventName"
@@ -32,26 +41,55 @@
         android:inputType="text"
         android:padding="10dp" />
 
-    <EditText
-        android:id="@+id/etUpdateStartDate"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@android:color/white"
-        android:hint="@string/evn_start"
-        android:inputType="datetime"
-        android:padding="10dp" />
+        android:orientation="horizontal" >
 
+        <EditText
+            android:id="@+id/etUpdateStartDate"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@android:color/white"
+            android:hint="@string/evn_start"
+            android:inputType="datetime"
+            android:padding="10dp" />
 
-    <EditText
-        android:id="@+id/etUpdateEndDate"
+        <Button
+            android:id="@+id/btnEvnStart"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Select\nDate"
+            android:textSize="10sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@android:color/white"
-        android:hint="@string/evn_end"
-        android:inputType="datetime"
-        android:padding="10dp" />
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/etUpdateEndDate"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@android:color/white"
+            android:hint="@string/evn_start"
+            android:inputType="datetime"
+            android:padding="10dp" />
+
+        <Button
+            android:id="@+id/btnEvnEnd"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Select\nDate"
+            android:textSize="10sp" />
+
+    </LinearLayout>
 
     <EditText
         android:id="@+id/etUpdateEventType"

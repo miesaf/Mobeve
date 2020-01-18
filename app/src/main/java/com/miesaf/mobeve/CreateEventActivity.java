@@ -1,12 +1,13 @@
 package com.miesaf.mobeve;
 
+import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -21,7 +22,9 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class CreateEventActivity<adapter> extends AppCompatActivity {
+import java.util.Calendar;
+
+public class CreateEventActivity<adapter> extends AppCompatActivity implements View.OnClickListener {
     private static final String KEY_STATUS = "status";
     private static final String KEY_MESSAGE = "message";
     private static final String KEY_EVN_NAME = "evn_name";
@@ -35,10 +38,14 @@ public class CreateEventActivity<adapter> extends AppCompatActivity {
     private EditText etStartDate;
     private EditText etEndDate;
 
+    Button btnEvnStart, btnEvnEnd;
+
     private String EventName;
     private String StartDate;
     private String EndDate;
     private String EventType;
+
+    private int mYear, mMonth, mDay;
 
     private ProgressDialog pDialog;
     private String register_url = "https://miesaf.ml/dev/mobeve/create_event.php";
@@ -59,23 +66,25 @@ public class CreateEventActivity<adapter> extends AppCompatActivity {
         final Spinner etEventType = findViewById(R.id.etCreateEventType);
         //create a list of items for the spinner.
         String[] items = new String[]{"workshops", "seminars", "talks", "sports", "volunteerism"};
+
         //create an adapter to describe how the items are displayed, adapters are used in several places in android.
         //There are multiple variations of this, but this is the basic variant.
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
+
         //set the spinners adapter to the previously created one.
         etEventType.setAdapter(adapter);
-
-        // ATTENTION: This was auto-generated to handle app links.
-        Intent appLinkIntent = getIntent();
-        String appLinkAction = appLinkIntent.getAction();
-        Uri appLinkData = appLinkIntent.getData();
 
         etEventName = findViewById(R.id.etCreateEventName);
         etStartDate = findViewById(R.id.etCreateStartDate);
         etEndDate = findViewById(R.id.etCreateEndDate);
 
+        btnEvnStart = findViewById(R.id.btnEvnStart);
+        btnEvnEnd = findViewById(R.id.btnEvnEnd);
         Button EvnCreate = findViewById(R.id.btnEvnCreate);
         Button BtnCancel = findViewById(R.id.btnCancel);
+
+        btnEvnStart.setOnClickListener(this);
+        btnEvnEnd.setOnClickListener(this);
 
         EvnCreate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,6 +109,39 @@ public class CreateEventActivity<adapter> extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    public void onClick(View v) {
+        // Get Current Date
+        final Calendar c = Calendar.getInstance();
+        mYear = c.get(Calendar.YEAR);
+        mMonth = c.get(Calendar.MONTH);
+        mDay = c.get(Calendar.DAY_OF_MONTH);
+
+        if (v == btnEvnStart) {
+            DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                    new DatePickerDialog.OnDateSetListener() {
+                        @Override
+                        public void onDateSet(DatePicker view, int year,
+                                              int monthOfYear, int dayOfMonth) {
+                            etStartDate.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth + " 00:00:00");
+                        }
+                    }, mYear, mMonth, mDay);
+            datePickerDialog.show();
+        }
+
+        if (v == btnEvnEnd) {
+            DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                    new DatePickerDialog.OnDateSetListener() {
+                        @Override
+                        public void onDateSet(DatePicker view, int year,
+                                              int monthOfYear, int dayOfMonth) {
+                            etEndDate.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth + " 00:00:00");
+                        }
+                    }, mYear, mMonth, mDay);
+            datePickerDialog.show();
+        }
     }
 
     /**
@@ -219,5 +261,8 @@ public class CreateEventActivity<adapter> extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
 
+    }
 }

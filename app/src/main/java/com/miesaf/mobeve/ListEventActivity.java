@@ -37,6 +37,7 @@ public class ListEventActivity extends AppCompatActivity implements ListEventsAd
     private static final String KEY_EVENT_LIST = "data";
     private ProgressDialog pDialog;
     private String post_url = "https://miesaf.ml/dev/mobeve/list_event.php";
+    private String delete_url = "https://miesaf.ml/dev/mobeve/delete_event.php";
 
     public static final String EXTRA_ID = "evn_id";
     public static final String EXTRA_NAME = "evn_name";
@@ -48,6 +49,12 @@ public class ListEventActivity extends AppCompatActivity implements ListEventsAd
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        session = new SessionHandler(getApplicationContext());
+        if(!session.isLoggedIn()){
+            loadLogin();
+        }
+
         setContentView(R.layout.activity_list_event);
 
         mRecyclerView = findViewById(R.id.recycler_view);
@@ -73,7 +80,7 @@ public class ListEventActivity extends AppCompatActivity implements ListEventsAd
     }
 
     private void parseJSON() {
-        displayLoader();
+        displayLoader("Getting event list.. Please wait...");
         session = new SessionHandler(getApplicationContext());
         JSONObject request = new JSONObject();
 
@@ -128,9 +135,9 @@ public class ListEventActivity extends AppCompatActivity implements ListEventsAd
      * Display Progress bar while Logging in
      */
 
-    private void displayLoader() {
+    private void displayLoader(String message) {
         pDialog = new ProgressDialog(ListEventActivity.this);
-        pDialog.setMessage("Getting event list.. Please wait...");
+        pDialog.setMessage(message);
         pDialog.setIndeterminate(false);
         pDialog.setCancelable(false);
         pDialog.show();
@@ -139,6 +146,8 @@ public class ListEventActivity extends AppCompatActivity implements ListEventsAd
 
     @Override
     public void onItemClick(int position) {
+        displayLoader("Getting event details.. Please wait...");
+
         Intent detailIntent = new Intent(this, DetailEventActivity.class);
         Events clickedItem = mEventList.get(position);
 
@@ -150,5 +159,14 @@ public class ListEventActivity extends AppCompatActivity implements ListEventsAd
         detailIntent.putExtra(EXTRA_LEADER, clickedItem.getEvn_leader());
 
         startActivity(detailIntent);
+        finish();
+        pDialog.dismiss();
+    }
+
+    private void loadLogin() {
+        Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+        startActivity(i);
+        finish();
+
     }
 }

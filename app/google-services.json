@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1081029728072",
+    "firebase_url": "https://mobeve-59dcf.firebaseio.com",
+    "project_id": "mobeve-59dcf",
+    "storage_bucket": "mobeve-59dcf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1081029728072:android:17171b7211eb38a7cf457d",
+        "android_client_info": {
+          "package_name": "com.miesaf.mobeve"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1081029728072-j3f8s6qd8sjftddft1en992ert9dlhve.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.miesaf.mobeve",
+            "certificate_hash": "8ef5a9e324fb467c0e48f307e8ca72f725e215d8"
+          }
+        },
+        {
+          "client_id": "1081029728072-ee05iu3p1aclt4r72vp20rdus0n2mhlk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUfIYs6YNO8Av2yhRJ_bsQa43DnfX2iNI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1081029728072-ee05iu3p1aclt4r72vp20rdus0n2mhlk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

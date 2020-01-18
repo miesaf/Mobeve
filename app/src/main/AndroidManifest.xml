@@ -12,10 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".DetailEventActivity"></activity>
+
+        <activity android:name=".DetailEventActivity" />
         <activity android:name=".UpdateEventActivity" />
-        <activity android:name=".DeleteEventActivity" />
-        <activity android:name=".RetrieveEventActivity" />
         <activity android:name=".ListEventActivity" />
         <activity
             android:name=".SplashActivity"
@@ -61,6 +60,7 @@
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
+
     </application>
 
 </manifest>

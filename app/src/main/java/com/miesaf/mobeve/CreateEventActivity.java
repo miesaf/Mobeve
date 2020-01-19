@@ -65,7 +65,7 @@ public class CreateEventActivity<adapter> extends AppCompatActivity implements V
         //get the spinner from the xml.
         final Spinner etEventType = findViewById(R.id.etCreateEventType);
         //create a list of items for the spinner.
-        String[] items = new String[]{"workshops", "seminars", "talks", "sports", "volunteerism"};
+        String[] items = new String[]{"workshops", "talks", "sports", "volunteerism"};
 
         //create an adapter to describe how the items are displayed, adapters are used in several places in android.
         //There are multiple variations of this, but this is the basic variant.

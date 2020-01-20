@@ -150,6 +150,7 @@ public class DetailEventActivity extends AppCompatActivity {
                                 TextView tvEvn_end = findViewById(R.id.evnEnd);
                                 TextView tvEvn_type = findViewById(R.id.evnType);
                                 TextView tvEvn_leader = findViewById(R.id.evnLeader);
+                                TextView tvEvn_rule = findViewById(R.id.evnRule);
 
                                 tvEvn_id.setText(data.getString("evn_id"));
                                 tvEvn_name.setText(data.getString("evn_name"));
@@ -157,6 +158,7 @@ public class DetailEventActivity extends AppCompatActivity {
                                 tvEvn_end.setText(data.getString("evn_end"));
                                 tvEvn_type.setText(data.getString("evn_type"));
                                 tvEvn_leader.setText(data.getString("evn_leader"));
+                                tvEvn_rule.setText(data.getString("evn_rule"));
 
                                 //Toast.makeText(getApplicationContext(), "Display event details successful!", Toast.LENGTH_SHORT).show();
 

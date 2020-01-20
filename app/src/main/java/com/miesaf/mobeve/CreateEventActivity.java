@@ -5,7 +5,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -65,14 +64,14 @@ public class CreateEventActivity<adapter> extends AppCompatActivity implements V
         //get the spinner from the xml.
         final Spinner etEventType = findViewById(R.id.etCreateEventType);
         //create a list of items for the spinner.
-        String[] items = new String[]{"workshops", "talks", "sports", "volunteerism"};
+        //String[] items = new String[]{"workshops", "talks", "sports", "volunteerism"};
 
         //create an adapter to describe how the items are displayed, adapters are used in several places in android.
         //There are multiple variations of this, but this is the basic variant.
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        //ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
 
         //set the spinners adapter to the previously created one.
-        etEventType.setAdapter(adapter);
+        //etEventType.setAdapter(adapter);
 
         etEventName = findViewById(R.id.etCreateEventName);
         etStartDate = findViewById(R.id.etCreateStartDate);
@@ -80,13 +79,13 @@ public class CreateEventActivity<adapter> extends AppCompatActivity implements V
 
         btnEvnStart = findViewById(R.id.btnEvnStart);
         btnEvnEnd = findViewById(R.id.btnEvnEnd);
-        Button EvnCreate = findViewById(R.id.btnEvnCreate);
+        Button EvnNext = findViewById(R.id.btnEvnNext);
         Button BtnCancel = findViewById(R.id.btnCancel);
 
         btnEvnStart.setOnClickListener(this);
         btnEvnEnd.setOnClickListener(this);
 
-        EvnCreate.setOnClickListener(new View.OnClickListener() {
+        EvnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Retrieve the data entered in the edit texts
@@ -187,11 +186,43 @@ public class CreateEventActivity<adapter> extends AppCompatActivity implements V
                         try {
                             //Check if user got registered successfully
                             if (response.getInt(KEY_STATUS) == 0) {
-                                //Set the user session
-                                //session.loginUser(username,fullName);
                                 Toast.makeText(getApplicationContext(), "Event creation successful!",
                                         Toast.LENGTH_LONG).show();
-                                loadDashboard();
+
+                                String res_evn_id = response.getJSONObject("data").getString("evn_id");
+                                String res_evn_type = response.getJSONObject("data").getString("evn_type");
+
+                                if(res_evn_type.equals("Workshop")){
+                                    Intent ruleIntent = new Intent(CreateEventActivity.this, RuleWshop1Activity.class);
+                                    ruleIntent.putExtra("EXTRA_ID", res_evn_id);
+                                    startActivity(ruleIntent);
+                                }
+                                /*
+                                else if(res_evn_type.equals("Talk")){
+                                    Intent detailIntent = new Intent(CreateEventActivity.this, RuleWshop2Activity.class);
+                                    detailIntent.putExtra("EXTRA_ID", res_evn_id);
+                                    startActivity(detailIntent);
+                                }
+                                else if(res_evn_type.equals("Sport")){
+                                    Intent detailIntent = new Intent(CreateEventActivity.this, RuleWshop3Activity.class);
+                                    detailIntent.putExtra("EXTRA_ID", res_evn_id);
+                                    startActivity(detailIntent);
+                                }
+                                else if(res_evn_type.equals("Volunteerism")){
+                                    Intent detailIntent = new Intent(CreateEventActivity.this, RuleWshop4Activity.class);
+                                    detailIntent.putExtra("EXTRA_ID", res_evn_id);
+                                    startActivity(detailIntent);
+                                }
+                                */
+
+                                finish();
+                                pDialog.dismiss();
+
+                                //Intent i = new Intent(getApplicationContext(), ListEventsActivity.class);
+                                //startActivity(i);
+                                //finish();
+
+                                //loadDashboard();
 
                             }else if(response.getInt(KEY_STATUS) == 1){
                                 //Display error message if username is already existing

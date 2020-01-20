@@ -89,10 +89,11 @@ tools:context="com.miesaf.mobeve.CreateEventActivity">
         android:layout_margin="5dp"
         android:background="@android:drawable/btn_dropdown"
         android:hint="@string/evn_type"
-        android:spinnerMode="dropdown"/>
+        android:spinnerMode="dropdown"
+        android:entries="@array/event_types"/>
 
     <Button
-        android:id="@+id/btnEvnCreate"
+        android:id="@+id/btnEvnNext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"

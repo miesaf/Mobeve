@@ -146,13 +146,8 @@ public class RuleWshop2Activity extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), "Rule inferences accepted!",
                                         Toast.LENGTH_LONG).show();
 
-                                Intent ruleIntent = new Intent(RuleWshop2Activity.this, ResultActivity.class);
-                                ruleIntent.putExtra("EXTRA_ID", evn_id);
-                                startActivity(ruleIntent);
-
-                                //Intent i = new Intent(getApplicationContext(), ResultActivity.class);
-                                //Intent i = new Intent(getApplicationContext(), ListEventActivity.class);
-                                //startActivity(i);
+                                Intent i = new Intent(getApplicationContext(), ListEventActivity.class);
+                                startActivity(i);
                                 finish();
                                 //loadDashboard();
 

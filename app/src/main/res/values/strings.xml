@@ -110,4 +110,9 @@
         <item>Outsource</item>
     </string-array>
 
+    <string-array name="formality">
+        <item>Formal</item>
+        <item>Informal</item>
+    </string-array>
+
 </resources>

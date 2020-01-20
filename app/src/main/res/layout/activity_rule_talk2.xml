@@ -6,7 +6,7 @@ android:layout_height="match_parent"
 android:background="@color/colorAppBg"
 android:orientation="vertical"
 android:padding="20dp"
-tools:context=".RuleTalk1Activity">
+tools:context=".RuleTalk2Activity">
 
 <LinearLayout
     android:layout_width="match_parent"
@@ -22,17 +22,28 @@ tools:context=".RuleTalk1Activity">
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:gravity="center"
-        android:text="Talks Rules Engine (Step 1)"
+        android:text="Talks Rules Engine (Step 2)"
         android:textAllCaps="true"
         android:textColor="@android:color/white"
         android:textSize="26sp"
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/sec1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="Participation"
+        android:textColor="@color/colorRuleSubTitle"
+        android:textSize="20sp" />
+
+    <TextView
         android:id="@+id/ques1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Type of participation?"
+        android:text="Type of registration?"
         android:textColor="@android:color/white"
         android:textSize="15sp" />
 
@@ -43,13 +54,24 @@ tools:context=".RuleTalk1Activity">
         android:layout_margin="5dp"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
-        android:entries="@array/participation_type"/>
+        android:entries="@array/reg_type"/>
+
+    <TextView
+        android:id="@+id/sec2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:text="Promotional Advertisement"
+        android:textColor="@color/colorRuleSubTitle"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/ques2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Event promotional advertisement?"
+        android:text="Poster advertisement?"
         android:textColor="@android:color/white"
         android:textSize="15sp" />
 
@@ -66,7 +88,7 @@ tools:context=".RuleTalk1Activity">
         android:id="@+id/ques3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Provide food?"
+        android:text="Video advertisement?"
         android:textColor="@android:color/white"
         android:textSize="15sp" />
 
@@ -83,7 +105,7 @@ tools:context=".RuleTalk1Activity">
         android:id="@+id/ques4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Certification award?"
+        android:text="Banner advertisement?"
         android:textColor="@android:color/white"
         android:textSize="15sp" />
 
@@ -94,13 +116,13 @@ tools:context=".RuleTalk1Activity">
         android:layout_margin="5dp"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
-        android:entries="@array/cert"/>
+        android:entries="@array/bool"/>
 
     <TextView
         android:id="@+id/ques5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Have door gift?"
+        android:text="Audio advertisement?"
         android:textColor="@android:color/white"
         android:textSize="15sp" />
 
@@ -114,10 +136,21 @@ tools:context=".RuleTalk1Activity">
         android:entries="@array/bool"/>
 
     <TextView
+        android:id="@+id/sec3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="Lecturer"
+        android:textColor="@color/colorRuleSubTitle"
+        android:textSize="20sp" />
+
+    <TextView
         android:id="@+id/ques6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Talk by who?"
+        android:text="Will the lecturer be paid?"
         android:textColor="@android:color/white"
         android:textSize="15sp" />
 
@@ -128,13 +161,24 @@ tools:context=".RuleTalk1Activity">
         android:layout_margin="5dp"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
-        android:entries="@array/tutor"/>
+        android:entries="@array/bool"/>
+
+    <TextView
+        android:id="@+id/sec4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="Event Formality"
+        android:textColor="@color/colorRuleSubTitle"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/ques7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Any QnA session?"
+        android:text="Food for VIP?"
         android:textColor="@android:color/white"
         android:textSize="15sp" />
 
@@ -151,7 +195,7 @@ tools:context=".RuleTalk1Activity">
         android:id="@+id/ques8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Formality of the talk?"
+        android:text="Souvenir for VIP?"
         android:textColor="@android:color/white"
         android:textSize="15sp" />
 
@@ -162,7 +206,24 @@ tools:context=".RuleTalk1Activity">
         android:layout_margin="5dp"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
-        android:entries="@array/formality"/>
+        android:entries="@array/bool"/>
+
+    <TextView
+        android:id="@+id/ques9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Montage or video to play?"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <Spinner
+        android:id="@+id/spQues9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:entries="@array/bool"/>
 
     <Button
         android:id="@+id/btnEvnNext"
@@ -170,7 +231,7 @@ tools:context=".RuleTalk1Activity">
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:background="@color/colorBtnNext"
-        android:text="@string/evn_next"
+        android:text="Generate Result"
         android:textColor="@android:color/white" />
 
     <Button

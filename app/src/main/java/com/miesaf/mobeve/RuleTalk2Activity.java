@@ -18,8 +18,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class RuleTalk1Activity extends AppCompatActivity {
-
+public class RuleTalk2Activity extends AppCompatActivity {
     private static final String KEY_STATUS = "status";
     private static final String KEY_MESSAGE = "message";
     private static final String KEY_EVN_ID = "evn_id";
@@ -32,6 +31,7 @@ public class RuleTalk1Activity extends AppCompatActivity {
     private static final String KEY_ANS_6 = "ans_6";
     private static final String KEY_ANS_7 = "ans_7";
     private static final String KEY_ANS_8 = "ans_8";
+    private static final String KEY_ANS_9 = "ans_9";
     private static final String KEY_EMPTY = "";
 
     private ProgressDialog pDialog;
@@ -41,15 +41,13 @@ public class RuleTalk1Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         session = new SessionHandler(getApplicationContext());
         final User user = session.getUserDetails();
 
         if(!session.isLoggedIn()){
             loadLogin();
         }
-
-        setContentView(R.layout.activity_rule_talk1);
+        setContentView(R.layout.activity_rule_talk2);
 
         Intent ruleIntent = getIntent();
         final String evn_id = ruleIntent.getExtras().getString("EXTRA_ID");
@@ -62,6 +60,7 @@ public class RuleTalk1Activity extends AppCompatActivity {
         final Spinner spQues6 = findViewById(R.id.spQues6);
         final Spinner spQues7 = findViewById(R.id.spQues7);
         final Spinner spQues8 = findViewById(R.id.spQues8);
+        final Spinner spQues9 = findViewById(R.id.spQues9);
 
         Button EvnNext = findViewById(R.id.btnEvnNext);
         Button BtnCancel = findViewById(R.id.btnCancel);
@@ -78,9 +77,9 @@ public class RuleTalk1Activity extends AppCompatActivity {
                 String Answ6 = spQues6.getSelectedItem().toString().trim();
                 String Answ7 = spQues7.getSelectedItem().toString().trim();
                 String Answ8 = spQues8.getSelectedItem().toString().trim();
+                String Answ9 = spQues9.getSelectedItem().toString().trim();
 
-                ProcessRule(evn_id, Answ1, Answ2, Answ3, Answ4, Answ5, Answ6, Answ7, Answ8);
-
+                ProcessRule(evn_id, Answ1, Answ2, Answ3, Answ4, Answ5, Answ6, Answ7, Answ8, Answ9);
             }
         });
 
@@ -88,21 +87,21 @@ public class RuleTalk1Activity extends AppCompatActivity {
         BtnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(RuleTalk1Activity.this, DashboardActivity.class);
+                Intent i = new Intent(RuleTalk2Activity.this, DashboardActivity.class);
                 startActivity(i);
                 finish();
             }
         });
     }
 
-    private void ProcessRule(final String res_evn_id, String a1, String a2, String a3, String a4, String a5, String a6, String a7, String a8) {
+    private void ProcessRule(final String evn_id, String a1, String a2, String a3, String a4, String a5, String a6, String a7, String a8, String a9) {
         displayLoader();
         JSONObject request = new JSONObject();
         JSONObject response = new JSONObject();
         try {
             //Populate the request parameters
-            request.put(KEY_EVN_ID, res_evn_id);
-            request.put(KEY_RULE_LEVEL, 1);
+            request.put(KEY_EVN_ID, evn_id);
+            request.put(KEY_RULE_LEVEL, 2);
             request.put(KEY_ANS_1, a1);
             request.put(KEY_ANS_2, a2);
             request.put(KEY_ANS_3, a3);
@@ -111,6 +110,7 @@ public class RuleTalk1Activity extends AppCompatActivity {
             request.put(KEY_ANS_6, a6);
             request.put(KEY_ANS_7, a7);
             request.put(KEY_ANS_8, a8);
+            request.put(KEY_ANS_9, a9);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -126,12 +126,8 @@ public class RuleTalk1Activity extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), "Rule inferences accepted!",
                                         Toast.LENGTH_LONG).show();
 
-                                Intent ruleIntent = new Intent(RuleTalk1Activity.this, RuleTalk2Activity.class);
-                                ruleIntent.putExtra("EXTRA_ID", res_evn_id);
-                                startActivity(ruleIntent);
-
-                                //Intent i = new Intent(getApplicationContext(), ListEventActivity.class);
-                                //startActivity(i);
+                                Intent i = new Intent(getApplicationContext(), ListEventActivity.class);
+                                startActivity(i);
                                 finish();
                                 //loadDashboard();
 
@@ -152,7 +148,7 @@ public class RuleTalk1Activity extends AppCompatActivity {
 
                         //Display error message whenever an error occurs
                         Toast.makeText(getApplicationContext(),
-                                error.getMessage(), Toast.LENGTH_SHORT).show();
+                                error.getMessage(), Toast.LENGTH_LONG).show();
 
                     }
                 });
@@ -190,6 +186,5 @@ public class RuleTalk1Activity extends AppCompatActivity {
         Intent i = new Intent(getApplicationContext(), LoginActivity.class);
         startActivity(i);
         finish();
-
     }
 }

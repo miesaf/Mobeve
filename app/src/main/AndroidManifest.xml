@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".RuleWshop1Activity"></activity>
+        <activity android:name=".RuleWshop2Activity"></activity>
+        <activity android:name=".RuleWshop1Activity" />
         <activity android:name=".DetailEventActivity" />
         <activity android:name=".UpdateEventActivity" />
         <activity android:name=".ListEventActivity" />

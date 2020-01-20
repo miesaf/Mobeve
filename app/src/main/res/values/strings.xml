@@ -97,4 +97,17 @@
         <item>Formal</item>
         <item>Informal</item>
     </string-array>
+
+    <!-- Second Level -->
+    <string-array name="reg_type">
+        <item>Free of charge</item>
+        <item>Psid</item>
+    </string-array>
+
+    <string-array name="tutor_assist">
+        <item>No</item>
+        <item>Among committee</item>
+        <item>Outsource</item>
+    </string-array>
+
 </resources>

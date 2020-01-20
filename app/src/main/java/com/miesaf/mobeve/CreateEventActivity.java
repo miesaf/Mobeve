@@ -289,7 +289,6 @@ public class CreateEventActivity<adapter> extends AppCompatActivity implements V
         Intent i = new Intent(getApplicationContext(), LoginActivity.class);
         startActivity(i);
         finish();
-
     }
 
     @Override

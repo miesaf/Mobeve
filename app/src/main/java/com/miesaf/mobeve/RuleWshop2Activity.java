@@ -109,7 +109,7 @@ public class RuleWshop2Activity extends AppCompatActivity {
         });
     }
 
-    private void ProcessRule(String evn_id, String a1, String a2, String a3, String a4, String a5, String a6, String a7, String a8, String a9, String a10, String a11, String a12, String a13, String a14) {
+    private void ProcessRule(final String evn_id, String a1, String a2, String a3, String a4, String a5, String a6, String a7, String a8, String a9, String a10, String a11, String a12, String a13, String a14) {
         displayLoader();
         JSONObject request = new JSONObject();
         JSONObject response = new JSONObject();
@@ -146,9 +146,13 @@ public class RuleWshop2Activity extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), "Rule inferences accepted!",
                                         Toast.LENGTH_LONG).show();
 
-                                //Intent i = new Intent(getApplicationContext(), RuleWshop3Activity.class);
-                                Intent i = new Intent(getApplicationContext(), ListEventActivity.class);
-                                startActivity(i);
+                                Intent ruleIntent = new Intent(RuleWshop2Activity.this, ResultActivity.class);
+                                ruleIntent.putExtra("EXTRA_ID", evn_id);
+                                startActivity(ruleIntent);
+
+                                //Intent i = new Intent(getApplicationContext(), ResultActivity.class);
+                                //Intent i = new Intent(getApplicationContext(), ListEventActivity.class);
+                                //startActivity(i);
                                 finish();
                                 //loadDashboard();
 
@@ -169,7 +173,7 @@ public class RuleWshop2Activity extends AppCompatActivity {
 
                         //Display error message whenever an error occurs
                         Toast.makeText(getApplicationContext(),
-                                error.getMessage(), Toast.LENGTH_SHORT).show();
+                                error.getMessage(), Toast.LENGTH_LONG).show();
 
                     }
                 });

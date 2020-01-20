@@ -159,6 +159,15 @@
             tools:text="rule" />
 
         <Button
+            android:id="@+id/btnEvnResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorBtnNext"
+            android:text="View Bureaus and Tasks"
+            android:textColor="@android:color/white" />
+
+        <Button
             android:id="@+id/btnEvnEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

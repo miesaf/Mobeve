@@ -101,7 +101,7 @@
     <!-- Second Level -->
     <string-array name="reg_type">
         <item>Free of charge</item>
-        <item>Psid</item>
+        <item>Paid</item>
     </string-array>
 
     <string-array name="tutor_assist">

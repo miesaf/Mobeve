@@ -192,28 +192,26 @@ public class CreateEventActivity<adapter> extends AppCompatActivity implements V
                                 String res_evn_id = response.getJSONObject("data").getString("evn_id");
                                 String res_evn_type = response.getJSONObject("data").getString("evn_type");
 
-                                if(res_evn_type.equals("Workshop")){
+                                if(res_evn_type.equals("Workshop")) {
                                     Intent ruleIntent = new Intent(CreateEventActivity.this, RuleWshop1Activity.class);
                                     ruleIntent.putExtra("EXTRA_ID", res_evn_id);
                                     startActivity(ruleIntent);
                                 }
-                                /*
                                 else if(res_evn_type.equals("Talk")){
-                                    Intent detailIntent = new Intent(CreateEventActivity.this, RuleWshop2Activity.class);
+                                    Intent detailIntent = new Intent(CreateEventActivity.this, RuleTalk1Activity.class);
                                     detailIntent.putExtra("EXTRA_ID", res_evn_id);
                                     startActivity(detailIntent);
                                 }
                                 else if(res_evn_type.equals("Sport")){
-                                    Intent detailIntent = new Intent(CreateEventActivity.this, RuleWshop3Activity.class);
+                                    Intent detailIntent = new Intent(CreateEventActivity.this, RuleSport1Activity.class);
                                     detailIntent.putExtra("EXTRA_ID", res_evn_id);
                                     startActivity(detailIntent);
                                 }
                                 else if(res_evn_type.equals("Volunteerism")){
-                                    Intent detailIntent = new Intent(CreateEventActivity.this, RuleWshop4Activity.class);
+                                    Intent detailIntent = new Intent(CreateEventActivity.this, RuleVolun1Activity.class);
                                     detailIntent.putExtra("EXTRA_ID", res_evn_id);
                                     startActivity(detailIntent);
                                 }
-                                */
 
                                 finish();
                                 pDialog.dismiss();

@@ -6,7 +6,7 @@
     android:background="@color/colorAppBg"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".RuleWshop1Activity">
+    tools:context=".RuleWshop2Activity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -327,7 +327,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:background="@color/colorBtnNext"
-            android:text="@string/evn_next"
+            android:text="Generate Result"
             android:textColor="@android:color/white" />
 
         <Button

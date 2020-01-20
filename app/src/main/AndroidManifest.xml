@@ -12,7 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".RuleWshop2Activity"></activity>
+        <activity android:name=".RuleVolun1Activity"></activity>
+        <activity android:name=".RuleSport1Activity" />
+        <activity android:name=".RuleTalk1Activity" />
+        <activity android:name=".ResultActivity" />
+        <activity android:name=".RuleWshop2Activity" />
         <activity android:name=".RuleWshop1Activity" />
         <activity android:name=".DetailEventActivity" />
         <activity android:name=".UpdateEventActivity" />

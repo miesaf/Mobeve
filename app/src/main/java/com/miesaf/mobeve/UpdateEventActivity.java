@@ -106,6 +106,8 @@ public class UpdateEventActivity extends AppCompatActivity implements View.OnCli
         etUpdateEndDate.setText(evn_end_edit);
         etUpdateEventType.setText(evn_type_edit);
 
+        etUpdateEventType.setVisibility(View.GONE);
+
         EvnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

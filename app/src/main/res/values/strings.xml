@@ -74,6 +74,12 @@
         <item>Yes</item>
     </string-array>
 
+    <string-array name="food">
+        <item>No</item>
+        <item>Catering</item>
+        <item>Cook</item>
+    </string-array>
+
     <string-array name="cert">
         <item>No certificate</item>
         <item>Printed</item>
@@ -113,6 +119,18 @@
     <string-array name="formality">
         <item>Formal</item>
         <item>Informal</item>
+    </string-array>
+
+    <string-array name="score">
+        <item>No</item>
+        <item>Manual</item>
+        <item>Digital</item>
+    </string-array>
+
+    <string-array name="medical">
+        <item>No</item>
+        <item>Basic medical</item>
+        <item>Medical professional</item>
     </string-array>
 
 </resources>

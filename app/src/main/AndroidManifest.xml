@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".RuleSport2Activity"></activity>
+        <activity android:name=".RuleVolun2Activity"></activity>
+        <activity android:name=".RuleSport2Activity" />
         <activity android:name=".RuleTalk2Activity" />
         <activity android:name=".RuleVolun1Activity" />
         <activity android:name=".RuleSport1Activity" />

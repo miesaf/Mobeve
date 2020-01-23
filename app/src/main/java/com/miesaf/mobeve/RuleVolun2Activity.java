@@ -18,7 +18,8 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class RuleSport2Activity extends AppCompatActivity {
+public class RuleVolun2Activity extends AppCompatActivity {
+
     private static final String KEY_STATUS = "status";
     private static final String KEY_MESSAGE = "message";
     private static final String KEY_EVN_ID = "evn_id";
@@ -27,11 +28,10 @@ public class RuleSport2Activity extends AppCompatActivity {
     private static final String KEY_ANS_2 = "ans_2";
     private static final String KEY_ANS_3 = "ans_3";
     private static final String KEY_ANS_4 = "ans_4";
-    private static final String KEY_ANS_5 = "ans_5";
     private static final String KEY_EMPTY = "";
 
     private ProgressDialog pDialog;
-    private String rule_url = "https://miesaf.ml/dev/mobeve/sport_rules_engine.php";
+    private String rule_url = "https://miesaf.ml/dev/mobeve/volun_rules_engine.php";
     private SessionHandler session;
 
     @Override
@@ -43,7 +43,7 @@ public class RuleSport2Activity extends AppCompatActivity {
         if(!session.isLoggedIn()){
             loadLogin();
         }
-        setContentView(R.layout.activity_rule_sport2);
+        setContentView(R.layout.activity_rule_volun2);
 
         Intent ruleIntent = getIntent();
         final String evn_id = ruleIntent.getExtras().getString("EXTRA_ID");
@@ -52,7 +52,6 @@ public class RuleSport2Activity extends AppCompatActivity {
         final Spinner spQues2 = findViewById(R.id.spQues2);
         final Spinner spQues3 = findViewById(R.id.spQues3);
         final Spinner spQues4 = findViewById(R.id.spQues4);
-        final Spinner spQues5 = findViewById(R.id.spQues5);
 
         Button EvnNext = findViewById(R.id.btnEvnNext);
         Button BtnCancel = findViewById(R.id.btnCancel);
@@ -65,9 +64,8 @@ public class RuleSport2Activity extends AppCompatActivity {
                 String Answ2 = spQues2.getSelectedItem().toString().trim();
                 String Answ3 = spQues3.getSelectedItem().toString().trim();
                 String Answ4 = spQues4.getSelectedItem().toString().trim();
-                String Answ5 = spQues5.getSelectedItem().toString().trim();
 
-                ProcessRule(evn_id, Answ1, Answ2, Answ3, Answ4, Answ5);
+                ProcessRule(evn_id, Answ1, Answ2, Answ3, Answ4);
             }
         });
 
@@ -75,14 +73,14 @@ public class RuleSport2Activity extends AppCompatActivity {
         BtnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(RuleSport2Activity.this, DashboardActivity.class);
+                Intent i = new Intent(RuleVolun2Activity.this, DashboardActivity.class);
                 startActivity(i);
                 finish();
             }
         });
     }
 
-    private void ProcessRule(final String evn_id, String a1, String a2, String a3, String a4, String a5) {
+    private void ProcessRule(final String evn_id, String a1, String a2, String a3, String a4) {
         displayLoader();
         JSONObject request = new JSONObject();
         JSONObject response = new JSONObject();
@@ -94,7 +92,6 @@ public class RuleSport2Activity extends AppCompatActivity {
             request.put(KEY_ANS_2, a2);
             request.put(KEY_ANS_3, a3);
             request.put(KEY_ANS_4, a4);
-            request.put(KEY_ANS_5, a5);
 
         } catch (JSONException e) {
             e.printStackTrace();

@@ -6,7 +6,7 @@ android:layout_height="match_parent"
 android:background="@color/colorAppBg"
 android:orientation="vertical"
 android:padding="20dp"
-tools:context=".RuleVolun1Activity">
+tools:context=".RuleVolun2Activity">
 
 <LinearLayout
     android:layout_width="match_parent"
@@ -22,17 +22,28 @@ tools:context=".RuleVolun1Activity">
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:gravity="center"
-        android:text="Volunteerism Rules Engine (Step 1)"
+        android:text="Volunteerism Rules Engine (Step 2)"
         android:textAllCaps="true"
         android:textColor="@android:color/white"
         android:textSize="26sp"
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/sec1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:text="Promotional Advertisement"
+        android:textColor="@color/colorRuleSubTitle"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
         android:id="@+id/ques1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Event promotional advertisement?"
+        android:text="Poster advertisement?"
         android:textColor="@android:color/white"
         android:textSize="15sp" />
 
@@ -49,7 +60,7 @@ tools:context=".RuleVolun1Activity">
         android:id="@+id/ques2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Provide food?"
+        android:text="Video advertisement?"
         android:textColor="@android:color/white"
         android:textSize="15sp" />
 
@@ -60,13 +71,13 @@ tools:context=".RuleVolun1Activity">
         android:layout_margin="5dp"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
-        android:entries="@array/food"/>
+        android:entries="@array/bool"/>
 
     <TextView
         android:id="@+id/ques3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Place to overnight?"
+        android:text="Banner advertisement?"
         android:textColor="@android:color/white"
         android:textSize="15sp" />
 
@@ -77,69 +88,18 @@ tools:context=".RuleVolun1Activity">
         android:layout_margin="5dp"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
-        android:entries="@array/sleep"/>
+        android:entries="@array/bool"/>
 
     <TextView
         android:id="@+id/ques4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Certification award?"
+        android:text="Audio advertisement?"
         android:textColor="@android:color/white"
         android:textSize="15sp" />
 
     <Spinner
         android:id="@+id/spQues4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"
-        android:entries="@array/cert"/>
-
-    <TextView
-        android:id="@+id/ques5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Have gift?"
-        android:textColor="@android:color/white"
-        android:textSize="15sp" />
-
-    <Spinner
-        android:id="@+id/spQues5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"
-        android:entries="@array/bool"/>
-
-    <TextView
-        android:id="@+id/ques6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Do medical team needed?"
-        android:textColor="@android:color/white"
-        android:textSize="15sp" />
-
-    <Spinner
-        android:id="@+id/spQues6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"
-        android:entries="@array/bool"/>
-
-    <TextView
-        android:id="@+id/ques7"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Do safety team needed?"
-        android:textColor="@android:color/white"
-        android:textSize="15sp" />
-
-    <Spinner
-        android:id="@+id/spQues7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -153,7 +113,7 @@ tools:context=".RuleVolun1Activity">
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:background="@color/colorBtnNext"
-        android:text="@string/evn_next"
+        android:text="Generate Result"
         android:textColor="@android:color/white" />
 
     <Button

@@ -55,12 +55,13 @@ public class DetailEventActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        String evn_id = intent.getStringExtra(ListEventActivity.EXTRA_ID);
+        final String evn_id = intent.getStringExtra(ListEventActivity.EXTRA_ID);
+        final String evn_type = intent.getStringExtra(ListEventActivity.EXTRA_TYPE);
         /*
         String evn_name = intent.getStringExtra(ListEventActivity.EXTRA_NAME);
         String evn_start = intent.getStringExtra(ListEventActivity.EXTRA_START);
         String evn_end = intent.getStringExtra(ListEventActivity.EXTRA_END);
-        String evn_type = intent.getStringExtra(ListEventActivity.EXTRA_TYPE);
+
         String evn_leader = intent.getStringExtra(ListEventActivity.EXTRA_LEADER);
 
         TextView tvEvn_id = findViewById(R.id.evnId);
@@ -81,11 +82,27 @@ public class DetailEventActivity extends AppCompatActivity {
         */
         retrieveEvn(evn_id);
 
+        Button btnEvnResult = findViewById(R.id.btnEvnResult);
         Button btnEvnList = findViewById(R.id.btnEvnList);
         Button btnEvnUpdate = findViewById(R.id.btnEvnEdit);
         Button btnEvnDelete = findViewById(R.id.btnEvnDelete);
 
         //Launch Create Event Activity screen when Create Event Button is clicked
+        btnEvnResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent ruleIntent = new Intent(DetailEventActivity.this, ResultActivity.class);
+                ruleIntent.putExtra("EXTRA_ID", evn_id);
+                ruleIntent.putExtra("EXTRA_TYPE", evn_type);
+                ruleIntent.putExtra("EXTRA_RULE_LVL", 3);
+                startActivity(ruleIntent);
+
+                //Intent i = new Intent(getApplicationContext(), ListEventActivity.class);
+                //startActivity(i);
+                //finish();
+            }
+        });
+
         btnEvnList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -150,6 +167,10 @@ public class DetailEventActivity extends AppCompatActivity {
                                 TextView tvEvn_end = findViewById(R.id.evnEnd);
                                 TextView tvEvn_type = findViewById(R.id.evnType);
                                 TextView tvEvn_leader = findViewById(R.id.evnLeader);
+                                TextView tvEvn_rule = findViewById(R.id.evnRule);
+
+                                TextView tvTitle_leader = findViewById(R.id.titleLeader);
+                                TextView tvTitle_result = findViewById(R.id.titleResult);
 
                                 tvEvn_id.setText(data.getString("evn_id"));
                                 tvEvn_name.setText(data.getString("evn_name"));
@@ -157,6 +178,12 @@ public class DetailEventActivity extends AppCompatActivity {
                                 tvEvn_end.setText(data.getString("evn_end"));
                                 tvEvn_type.setText(data.getString("evn_type"));
                                 tvEvn_leader.setText(data.getString("evn_leader"));
+                                tvEvn_rule.setText(data.getString("evn_rule"));
+
+                                tvTitle_leader.setVisibility(View.GONE);
+                                tvEvn_leader.setVisibility(View.GONE);
+                                tvTitle_result.setVisibility(View.GONE);
+                                tvEvn_rule.setVisibility(View.GONE);
 
                                 //Toast.makeText(getApplicationContext(), "Display event details successful!", Toast.LENGTH_SHORT).show();
 

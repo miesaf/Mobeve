@@ -12,7 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-
+        <activity android:name=".RuleSport2Activity"></activity>
+        <activity android:name=".RuleTalk2Activity" />
+        <activity android:name=".RuleVolun1Activity" />
+        <activity android:name=".RuleSport1Activity" />
+        <activity android:name=".RuleTalk1Activity" />
+        <activity android:name=".ResultActivity" />
+        <activity android:name=".RuleWshop2Activity" />
+        <activity android:name=".RuleWshop1Activity" />
         <activity android:name=".DetailEventActivity" />
         <activity android:name=".UpdateEventActivity" />
         <activity android:name=".ListEventActivity" />
@@ -60,7 +67,6 @@
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
-
     </application>
 
 </manifest>

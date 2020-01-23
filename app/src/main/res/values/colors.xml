@@ -11,6 +11,7 @@
     <color name="colorAppBg">#304769</color>
     <color name="colorText">#ffffff</color>
     <color name="colorInputText">#ffffff</color>
+    <color name="colorRuleSubTitle">#2196F3</color>
 
     <color name="colorPrimary">#2196F3</color>
     <color name="colorPrimaryDark">#2D41B1</color>

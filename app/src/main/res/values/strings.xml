@@ -55,4 +55,82 @@
     <string name="edet_leader">Event Leader</string>
     <string name="edet_edit">Edit</string>
     <string name="edet_delete">Delete</string>
+
+    <!-- Spinner elements for event types -->
+    <string-array name="event_types">
+        <item>Workshop</item>
+        <item>Talk</item>
+        <item>Sport</item>
+        <item>Volunteerism</item>
+    </string-array>
+
+    <string-array name="participation_type">
+        <item>Open</item>
+        <item>Registered</item>
+    </string-array>
+
+    <string-array name="bool">
+        <item>No</item>
+        <item>Yes</item>
+    </string-array>
+
+    <string-array name="food">
+        <item>No</item>
+        <item>Catering</item>
+        <item>Cook</item>
+    </string-array>
+
+    <string-array name="cert">
+        <item>No certificate</item>
+        <item>Printed</item>
+        <item>Digital</item>
+    </string-array>
+
+    <string-array name="tuto_type">
+        <item>No material</item>
+        <item>Digital</item>
+        <item>Handout</item>
+        <item>Tools</item>
+    </string-array>
+
+    <string-array name="tutor">
+        <item>Committee member</item>
+        <item>Outsource</item>
+    </string-array>
+
+    <string-array name="ceremony">
+        <item>No ceremony</item>
+        <item>Formal</item>
+        <item>Informal</item>
+    </string-array>
+
+    <!-- Second Level -->
+    <string-array name="reg_type">
+        <item>Free of charge</item>
+        <item>Paid</item>
+    </string-array>
+
+    <string-array name="tutor_assist">
+        <item>No</item>
+        <item>Among committee</item>
+        <item>Outsource</item>
+    </string-array>
+
+    <string-array name="formality">
+        <item>Formal</item>
+        <item>Informal</item>
+    </string-array>
+
+    <string-array name="score">
+        <item>No</item>
+        <item>Manual</item>
+        <item>Digital</item>
+    </string-array>
+
+    <string-array name="medical">
+        <item>No</item>
+        <item>Basic medical</item>
+        <item>Medical professional</item>
+    </string-array>
+
 </resources>

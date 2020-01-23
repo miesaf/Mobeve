@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/colorAppBg"
+android:orientation="vertical"
+android:padding="20dp"
+tools:context=".RuleTalk1Activity">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAppBg"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="50dp">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="Talks Rules Engine (Step 1)"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/ques1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Type of participation?"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <Spinner
+        android:id="@+id/spQues1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:entries="@array/participation_type"/>
+
+    <TextView
+        android:id="@+id/ques2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Event promotional advertisement?"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <Spinner
+        android:id="@+id/spQues2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:entries="@array/bool"/>
+
+    <TextView
+        android:id="@+id/ques3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Provide food?"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <Spinner
+        android:id="@+id/spQues3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:entries="@array/bool"/>
+
+    <TextView
+        android:id="@+id/ques4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Certification award?"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <Spinner
+        android:id="@+id/spQues4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:entries="@array/cert"/>
+
+    <TextView
+        android:id="@+id/ques5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Have door gift?"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <Spinner
+        android:id="@+id/spQues5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:entries="@array/bool"/>
+
+    <TextView
+        android:id="@+id/ques6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Talk by who?"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <Spinner
+        android:id="@+id/spQues6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:entries="@array/tutor"/>
+
+    <TextView
+        android:id="@+id/ques7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Any QnA session?"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <Spinner
+        android:id="@+id/spQues7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:entries="@array/bool"/>
+
+    <TextView
+        android:id="@+id/ques8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Formality of the talk?"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <Spinner
+        android:id="@+id/spQues8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:entries="@array/formality"/>
+
+    <Button
+        android:id="@+id/btnEvnNext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/colorBtnNext"
+        android:text="@string/evn_next"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/colorBtnCancel"
+        android:text="@string/btnCancel"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>
+
+</ScrollView>

@@ -133,4 +133,10 @@
         <item>Medical professional</item>
     </string-array>
 
+    <string-array name="sleep">
+        <item>No</item>
+        <item>Tent</item>
+        <item>Rental</item>
+    </string-array>
+
 </resources>

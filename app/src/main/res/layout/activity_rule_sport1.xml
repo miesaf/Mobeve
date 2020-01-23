@@ -77,7 +77,7 @@ tools:context=".RuleSport1Activity">
         android:layout_margin="5dp"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
-        android:entries="@array/bool"/>
+        android:entries="@array/food"/>
 
     <TextView
         android:id="@+id/ques4"

@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteRule ^create_event/  create_event.php [QSA,L]
+RewriteRule ^delete_event/(.*)$  delete_event.php?evn_id=$1 [QSA,L]
+RewriteRule ^list_event/(.*)$  list_event.php?evn_leader=$1 [QSA,L]
+RewriteRule ^login/  login.php [QSA,L]
+RewriteRule ^register/  register.php [QSA,L]
+RewriteRule ^retrieve_event/(.*)$  retrieve_event.php?evn_id=$1 [QSA,L]
+RewriteRule ^update_event/  update_event.php [QSA,L]
+</IfModule>

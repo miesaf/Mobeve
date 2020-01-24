@@ -19,7 +19,7 @@ public class User {
         this.sessionExpiryDate = sessionExpiryDate;
     }
 
-    public String getUsername() {
+   public String getUsername() {
         return username;
     }
 

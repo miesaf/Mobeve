@@ -13,26 +13,23 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView"
+        <ImageView
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:text="Mobeve"
-            android:textAllCaps="true"
-            android:textColor="@android:color/white"
-            android:textSize="26sp"
-            android:textStyle="bold" />
+            android:layout_marginTop="10dp"
+            android:adjustViewBounds="true"
+            android:maxHeight="70dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/mobeve_logo_transparent" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="10dp"
             android:gravity="center"
-            android:text="Mobile Event Manager App"
+            android:text="Mobile Event Planner Application"
             android:textAllCaps="true"
             android:textColor="@android:color/white"
             android:textSize="13sp"

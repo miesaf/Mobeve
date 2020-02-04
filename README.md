@@ -68,7 +68,5 @@ Event planning is crucial in organizing an event. Different types of event have 
 | CSP650 Lecturer | Mr. Mohamad Asrol bin Arshad |
 
 ###### Contact Details for Enquiry
-E-Mail: [miesaf@dimensikini.xyz][id/email] 
-[id/email]: mailto:miesaf@dimensikini.xyz
-Contact Form: [https://dimensikini.xyz/hubungi.php][id/web] 
-[id/web]: https://dimensikini.xyz/hubungi.php
+E-Mail: miesaf@dimensikini.xyz
+Contact Form: https://dimensikini.xyz/hubungi.php

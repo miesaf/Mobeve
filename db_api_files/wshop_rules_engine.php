@@ -192,6 +192,7 @@
 				elseif($RuleLevel == "3")
 				{
 					// Result generation
+					$T_Rule["process_status"] = "completed";
 					$T_Rule["process_level"] = 4;
 					
 					if($T_Rule["known_facts"][1]["ans_1"] == "Registered"){

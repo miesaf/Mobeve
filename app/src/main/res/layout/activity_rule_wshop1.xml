@@ -111,7 +111,7 @@ tools:context=".RuleWshop1Activity">
         android:layout_margin="5dp"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
-        android:entries="@array/tuto_type"/>
+        android:entries="@array/bool"/>
 
     <TextView
         android:id="@+id/ques6"

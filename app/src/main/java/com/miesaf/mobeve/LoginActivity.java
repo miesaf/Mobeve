@@ -28,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     private static final String KEY_EMPTY = "";
     private EditText etUsername;
     private EditText etPassword;
+    private String fullname;
     private String username;
     private String password;
     private ProgressDialog pDialog;
@@ -118,7 +119,7 @@ public class LoginActivity extends AppCompatActivity {
                             //Check if user got logged in successfully
 
                             if (response.getInt(KEY_STATUS) == 0) {
-                                session.loginUser(username,response.getString(KEY_FULL_NAME));
+                                session.loginUser(username, response.getString(KEY_FULL_NAME));
                                 loadDashboard();
 
                             }else{

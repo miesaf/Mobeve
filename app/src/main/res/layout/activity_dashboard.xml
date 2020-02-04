@@ -13,26 +13,23 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView"
+        <ImageView
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:text="Mobeve"
-            android:textAllCaps="true"
-            android:textColor="@android:color/white"
-            android:textSize="26sp"
-            android:textStyle="bold" />
+            android:layout_marginTop="10dp"
+            android:adjustViewBounds="true"
+            android:maxHeight="70dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/mobeve_logo_transparent" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="10dp"
             android:gravity="center"
-            android:text="Mobile Event Manager App"
+            android:text="Mobile Event Planner Application"
             android:textAllCaps="true"
             android:textColor="@android:color/white"
             android:textSize="13sp"
@@ -42,8 +39,22 @@
             android:id="@+id/welcomeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorBtnText"
-            android:padding="20dp" />
+            android:paddingLeft="20dp"
+            android:paddingTop="0dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="0dp"
+            android:text="Welcome Amirul, your session will expire on Fri Oct 15 03:30:15 GMT+08:00 2020"
+            android:textColor="@color/colorBtnText" />
+
+        <TextView
+            android:id="@+id/tableEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:text="Event Planning Management"
+            android:textColor="@color/colorBtnText" />
 
         <Button
             android:id="@+id/btnEvnCreate"
@@ -273,6 +284,34 @@
             android:text="@string/assigned_task"
             android:textColor="@color/colorBtnText" />
         -->
+
+        <TextView
+            android:id="@+id/tableAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:text="Account Management"
+            android:textColor="@color/colorBtnText" />
+
+        <Button
+            android:id="@+id/btnResetPwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorButton"
+            android:text="Reset Password"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btnDeleteAcc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorButton"
+            android:text="Delete Account"
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/btnLogout"

@@ -14,7 +14,11 @@ tools:context="com.miesaf.mobeve.LoginActivity">
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="20dp"
-    android:src="@drawable/ic_lock_outline_white" />
+    android:adjustViewBounds="true"
+    android:maxWidth="100dp"
+    android:maxHeight="100dp"
+    android:scaleType="fitCenter"
+    android:src="@drawable/mobeve_logo_transparent" />
 
 <EditText
     android:id="@+id/etLoginUsername"

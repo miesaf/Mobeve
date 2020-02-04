@@ -1,9 +1,9 @@
 package com.miesaf.mobeve;
 
-        import android.content.Context;
-        import android.content.SharedPreferences;
+import android.content.Context;
+import android.content.SharedPreferences;
 
-        import java.util.Date;
+import java.util.Date;
 
 public class SessionHandler {
     private static final String PREF_NAME = "UserSession";

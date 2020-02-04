@@ -31,6 +31,8 @@ public class DashboardActivity extends AppCompatActivity {
 
         Button evnCreateBtn = findViewById(R.id.btnEvnCreate);
         Button btnEvnList = findViewById(R.id.btnEvnList);
+        Button btnResetPwd = findViewById(R.id.btnResetPwd);
+        Button btnDeleteAcc = findViewById(R.id.btnDeleteAcc);
         Button logoutBtn = findViewById(R.id.btnLogout);
 
         //Launch Create Event Activity screen when Create Event Button is clicked
@@ -48,6 +50,26 @@ public class DashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(DashboardActivity.this, ListEventActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
+        //Launch Change Password Activity screen
+        btnResetPwd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(DashboardActivity.this, ResetPasswordActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
+        //Launch Delete Account Activity screen
+        btnDeleteAcc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(DashboardActivity.this, DeleteAccountActivity.class);
                 startActivity(i);
                 finish();
             }

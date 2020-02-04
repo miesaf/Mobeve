@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".RuleVolun2Activity"></activity>
+        <activity android:name=".DeleteAccountActivity"></activity>
+        <activity android:name=".ResetPasswordActivity" />
+        <activity android:name=".RuleVolun2Activity" />
         <activity android:name=".RuleSport2Activity" />
         <activity android:name=".RuleTalk2Activity" />
         <activity android:name=".RuleVolun1Activity" />

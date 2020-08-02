@@ -35,7 +35,7 @@ public class RuleTalk1Activity extends AppCompatActivity {
     private static final String KEY_EMPTY = "";
 
     private ProgressDialog pDialog;
-    private String rule_url = "https://miesaf.ml/dev/mobeve/talk_rules_engine.php";
+    private String rule_url = "https://dimensikini.xyz/api/mobeve/talk_rules_engine.php";
     private SessionHandler session;
 
     @Override

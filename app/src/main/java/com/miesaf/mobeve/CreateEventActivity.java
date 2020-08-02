@@ -47,7 +47,7 @@ public class CreateEventActivity<adapter> extends AppCompatActivity implements V
     private int mYear, mMonth, mDay;
 
     private ProgressDialog pDialog;
-    private String register_url = "https://miesaf.ml/dev/mobeve/create_event.php";
+    private String register_url = "https://dimensikini.xyz/api/mobeve/create_event.php";
     private SessionHandler session;
 
     @Override

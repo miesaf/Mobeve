@@ -29,7 +29,7 @@ public class DeleteAccountActivity extends AppCompatActivity {
     private String DelAcc;
 
     private ProgressDialog pDialog;
-    private String update_url = "https://miesaf.ml/dev/mobeve/delete_account.php";
+    private String update_url = "https://dimensikini.xyz/api/mobeve/delete_account.php";
     private SessionHandler session;
 
     @Override

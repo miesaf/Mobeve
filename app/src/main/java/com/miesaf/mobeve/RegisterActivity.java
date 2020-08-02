@@ -35,7 +35,7 @@ public class RegisterActivity extends AppCompatActivity {
     private String confirmPassword;
     private String fullName;
     private ProgressDialog pDialog;
-    private String register_url = "https://miesaf.ml/dev/mobeve/register.php";
+    private String register_url = "https://dimensikini.xyz/api/mobeve/register.php";
     private SessionHandler session;
 
     @Override

@@ -40,7 +40,7 @@ public class RuleWshop2Activity extends AppCompatActivity {
     private static final String KEY_EMPTY = "";
 
     private ProgressDialog pDialog;
-    private String rule_url = "https://miesaf.ml/dev/mobeve/wshop_rules_engine.php";
+    private String rule_url = "https://dimensikini.xyz/api/mobeve/wshop_rules_engine.php";
     private SessionHandler session;
 
     @Override

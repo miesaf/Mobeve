@@ -37,8 +37,8 @@ public class DetailEventActivity extends AppCompatActivity {
     private static final String KEY_STATUS = "status";
     private static final String KEY_MESSAGE = "message";
     private static final String KEY_EVN_ID = "evn_id";
-    private String retrieve_url = "https://miesaf.ml/dev/mobeve/retrieve_event.php";
-    private String delete_url = "https://miesaf.ml/dev/mobeve/delete_event.php";
+    private String retrieve_url = "https://dimensikini.xyz/api/mobeve/retrieve_event.php";
+    private String delete_url = "https://dimensikini.xyz/api/mobeve/delete_event.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

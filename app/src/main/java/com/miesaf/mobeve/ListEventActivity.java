@@ -36,8 +36,8 @@ public class ListEventActivity extends AppCompatActivity implements ListEventsAd
     private static final String KEY_LEADER_ID = "evn_leader";
     private static final String KEY_EVENT_LIST = "data";
     private ProgressDialog pDialog;
-    private String post_url = "https://miesaf.ml/dev/mobeve/list_event.php";
-    private String delete_url = "https://miesaf.ml/dev/mobeve/delete_event.php";
+    private String post_url = "https://dimensikini.xyz/api/mobeve/list_event.php";
+    private String delete_url = "https://dimensikini.xyz/api/mobeve/delete_event.php";
 
     public static final String EXTRA_ID = "evn_id";
     public static final String EXTRA_NAME = "evn_name";

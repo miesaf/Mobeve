@@ -51,7 +51,7 @@ Event planning is crucial in organizing an event. Different types of event have 
 3. Run the file `db_api_files/db/mobeve_database.sql` in `phpMyAdmin` to deploy database structure.
 4. Alter database login credentials accordingly in the file `db_api_files/db/db_connect.php`.
 5. Extract and import repository into Android Studio.
-6. Alter all URL in all Java files that maps to `https://miesaf.ml/dev/mobeve/*` so that it maps to XAMPP's IP address (example: http://localhost/*).
+6. Alter all URL in all Java files that maps to `https://dimensikini.xyz/api/mobeve/*` so that it maps to XAMPP's IP address (example: http://localhost/*).
 
 **NOTE**:	Android may not allow communication without valid SSL Certificate. Instead of using XAMPP, it is recommended to use web hosting domain that has a SSL Certificate.*
 

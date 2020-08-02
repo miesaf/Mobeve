@@ -55,7 +55,7 @@ public class UpdateEventActivity extends AppCompatActivity implements View.OnCli
     String EventNameHolder, StartDateHolder, EndDateHolder, EventTypeHolder;
 
     private ProgressDialog pDialog;
-    private String update_url = "https://miesaf.ml/dev/mobeve/update_event.php";
+    private String update_url = "https://dimensikini.xyz/api/mobeve/update_event.php";
     private SessionHandler session;
 
     @Override

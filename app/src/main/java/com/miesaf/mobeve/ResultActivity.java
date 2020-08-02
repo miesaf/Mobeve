@@ -33,7 +33,7 @@ public class ResultActivity extends AppCompatActivity {
     private static final String KEY_MESSAGE = "message";
     private static final String KEY_EVN_ID = "evn_id";
     private static final String KEY_EVN_RLVL = "rule_level";
-    private String result_url = "https://miesaf.ml/dev/mobeve/wshop_rules_engine.php";
+    private String result_url = "https://dimensikini.xyz/api/mobeve/wshop_rules_engine.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,16 +79,16 @@ public class ResultActivity extends AppCompatActivity {
         displayLoader("Retrieving event result details.. Please wait...");
 
         if(evn_type.equals("Workshop")){
-            result_url = "https://miesaf.ml/dev/mobeve/wshop_rules_engine.php";
+            result_url = "https://dimensikini.xyz/api/mobeve/wshop_rules_engine.php";
             rule_level = 3;
         }else if(evn_type.equals("Talk")){
-            result_url = "https://miesaf.ml/dev/mobeve/talk_rules_engine.php";
+            result_url = "https://dimensikini.xyz/api/mobeve/talk_rules_engine.php";
             rule_level = 3;
         }else if(evn_type.equals("Sport")){
-            result_url = "https://miesaf.ml/dev/mobeve/sport_rules_engine.php";
+            result_url = "https://dimensikini.xyz/api/mobeve/sport_rules_engine.php";
             rule_level = 3;
         }else if(evn_type.equals("Volunteerism")){
-            result_url = "https://miesaf.ml/dev/mobeve/volun_rules_engine.php";
+            result_url = "https://dimensikini.xyz/api/mobeve/volun_rules_engine.php";
             rule_level = 3;
         }
 

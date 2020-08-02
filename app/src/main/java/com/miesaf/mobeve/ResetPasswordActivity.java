@@ -29,7 +29,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
     private String NewPw;
 
     private ProgressDialog pDialog;
-    private String update_url = "https://miesaf.ml/dev/mobeve/reset_password.php";
+    private String update_url = "https://dimensikini.xyz/api/mobeve/reset_password.php";
     private SessionHandler session;
 
     @Override

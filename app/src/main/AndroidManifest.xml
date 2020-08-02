@@ -46,7 +46,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="miesaf.ml"
+                    android:host="dimensikini.xyz"
                     android:path="/dev/member/mapping"
                     android:scheme="https" />
             </intent-filter>
